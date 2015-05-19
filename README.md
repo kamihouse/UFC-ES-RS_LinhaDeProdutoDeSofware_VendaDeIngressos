@@ -9,3 +9,11 @@ Reuso de Software - 2015/1
 - Thiago Pereira Rosa
 - Marcílio Valois
 - Natasha Pinheiro
+
+# Artefatos
+- Modelo de Features
+- Matriz de Rastreabilidade
+- Documento de Requisitos
+
+# Modelo de Features
+![alt tag](http://url/to/img.png)
