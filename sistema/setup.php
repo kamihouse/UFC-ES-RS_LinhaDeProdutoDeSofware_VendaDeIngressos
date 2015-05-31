@@ -1,4 +1,7 @@
 <?php
+	// Habilita Sessão
+	session_start();
+
     // desabilita warnings
     error_reporting(E_ERROR);
     
