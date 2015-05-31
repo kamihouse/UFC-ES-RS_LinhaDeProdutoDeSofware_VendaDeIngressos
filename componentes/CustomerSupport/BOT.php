@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION)){
+    session_start();
+}
+
 	class BOT{
 
 		protected $mensagem = null;

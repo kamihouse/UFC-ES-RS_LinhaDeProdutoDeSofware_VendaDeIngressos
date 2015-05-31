@@ -16,7 +16,14 @@
     <body>
         <h3><a href="./">LPS - Venda de Ingressos</a> | Bem vindo</h3>
         <hr>
-        <p>Selecione uma das opções no menu abaixo:</p>
+
+        <?php
+            if(isset($_SESSION['nome'])){
+                echo '<br>Olá <b>'. $_SESSION['nome'] .'</b> você já está logado. <a href="Componentes/Profile/Profile.php?acao=usuarioLogado">Clique Aqui</a> para ir para sua home page.' ;
+            }
+        ?>
+
+        <p><br>Escolha as opções no menu abaixo:</p>
         <ul>
             <?php
                 if(isset($GLOBALS['menu'])){

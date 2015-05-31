@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION)){
+	session_start();
+}
+
 	// Pega acao do usuário
 	$acao   = isset($_GET['acao']) ? $_GET['acao'] : null;
 	$metodo = isset($_GET['metodo']) ? $_GET['metodo'] : null;
