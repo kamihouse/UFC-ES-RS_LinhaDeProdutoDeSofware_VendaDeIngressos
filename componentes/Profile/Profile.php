@@ -94,11 +94,18 @@ if(!isset($_SESSION)){
                 <html>
                     <head>
                         <meta charset="utf-8">
-                        <title>Titulo - Login</title>
+                        <title>LPS - Venda de Ingressos - Login</title>
                     </head>
                     <body>
                         <h3><a href="../../">LPS - Venda de Ingressos</a></h3>
                         <hr>
+			');
+
+			if(isset($_SESSION['nome'])){
+				echo '<br>Olá <b>'. $_SESSION['nome'] .'</b> você já está logado. <a href="Profile.php?acao=usuarioLogado">Clique Aqui</a> para ir para sua home page.<br><br>' ;
+			}
+
+			print('
                         <form action="./Profile.php?acao=login&metodo=submit" method="post">
                             '. $this->mensagem .'
                             <label for="login">Login:</label>
@@ -127,7 +134,7 @@ if(!isset($_SESSION)){
                 <html>
                     <head>
                         <meta charset="utf-8">
-                        <title>Titulo - Bem vindo</title>
+                        <title>LPS - Venda de Ingressos - Bem vindo</title>
                     </head>
                     <body>
                         <h3><a href="../../">LPS - Venda de Ingressos</a> | Bem vindo '. $_SESSION['nome'] .'</h3>
@@ -175,7 +182,7 @@ if(!isset($_SESSION)){
                 <html>
                     <head>
                         <meta charset="utf-8">
-                        <title>Titulo - Sessão encerrada com sucesso</title>
+                        <title>LPS - Venda de Ingressos - Sessão encerrada com sucesso</title>
 
                         <META http-equiv="refresh" content="3; URL=../../">
                     </head>
@@ -199,7 +206,7 @@ if(!isset($_SESSION)){
                 <html>
                     <head>
                         <meta charset="utf-8">
-                        <title>Titulo - Cadastro de Usuário</title>
+                        <title>LPS - Venda de Ingressos - Cadastro de Usuário</title>
                         </head>
                     <body>
                         <h3><a href="../../">LPS - Venda de Ingressos</a> | Cadastro de Usuário</h3>

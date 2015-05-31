@@ -6,20 +6,21 @@ Universidade Federal do Ceará (Campus Quixadá) - Engenharia de Software
 
 ### Disciplina
 Reuso de Software - 2015/1
+(Profa: Carla Ilane Moreira Bezerra)
 
 ## Modelo de Features
 ![alt tag](https://raw.githubusercontent.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos/master/_documentos/modelo_features_v1.1.png)
+
+## Artefatos
+- Matriz de Rastreabilidade: https://github.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos/blob/master/_documentos/Matriz-de-Rastreabilidade.xlsx
+- Documento de Requisitos: https://github.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos/blob/master/_documentos/Trabalho_Fearure-DocReq1.1.pdf
+- Modelo de Features: https://raw.githubusercontent.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos/master/_documentos/modelo_features_v1.1.png
 
 ### Equipe
 - Matheus Souza de Carvalho
 - Thiago Pereira Rosa
 - Marcílio Valois
 - Natasha Pinheiro
-
-### Artefatos
-- Modelo de Features
-- Matriz de Rastreabilidade
-- Documento de Requisitos
 
 ### Detalhes Técnicos
 

@@ -28,6 +28,7 @@
 		}
 
 		public function exibeSugestoes(){
+			$sessao = isset($_SESSION['nome']) ? $_SESSION['nome'] : null;
 			$conteudo = ('
 			<!DOCTYPE html>
 			<html>
@@ -39,7 +40,7 @@
 					<h3><a href="../../">LPS - Venda de Ingressos</a> | Sugestão de Eventos</h3>
 					<hr>
 
-					<p>Eventos sugeridos para você: <b>'. $_SESSION['nome'] .'</b></p>
+					<p>Eventos sugeridos para você: <b>'. $sessao .'</b></p>
 
 					<ul>
 						<li>Open Beer Festival - Premium Paulínia | Paulínia-SP</li>
@@ -50,7 +51,7 @@
 			</html>
 			');
 
-			if(isset($_SESSION['nome'])){
+			if(isset($sessao)){
 				print $conteudo;
 			} else {
 				print '

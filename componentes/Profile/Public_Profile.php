@@ -20,7 +20,7 @@ if(!isset($_SESSION)){
                 <html>
                     <head>
                         <meta charset="utf-8">
-                        <title>Titulo - Perfil Público</title>
+                        <title>LPS - Venda de Ingressos - Perfil Público</title>
                     </head>
                     <body>
                         <h3><a href="../../">LPS - Venda de Ingressos</a> | Perfil Público</h3>
