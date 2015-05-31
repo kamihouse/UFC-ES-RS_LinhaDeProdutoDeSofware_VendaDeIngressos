@@ -72,7 +72,7 @@
                         <title>Titulo - Login</title>
                     </head>
                     <body>
-                        <h3>LPS - Venda de Ingressos</h3>
+                        <h3><a href="../../">LPS - Venda de Ingressos</a></h3>
                         <hr>
                         <form action="./Private_Profile.php?acao=login&metodo=submit" method="post">
                             '. $this->mensagem .'
@@ -105,7 +105,7 @@
                         <title>Titulo - Bem vindo!</title>
                     </head>
                     <body>
-                        <h3>LPS - Venda de Ingressos | Bem vindo</h3>
+                        <h3><a href="../../">LPS - Venda de Ingressos</a> | Bem vindo</h3>
                         <hr>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, accusantium ad at dolor dolore esse illo
                         ipsum laudantium minus molestiae officia porro provident, reprehenderit similique sit unde veritatis vero voluptas.</p>
@@ -155,7 +155,7 @@
                         <title>Titulo - Cadastro de Usuário</title>
                         </head>
                     <body>
-                        <h3>LPS - Venda de Ingressos | Cadastro de Usuário</h3>
+                        <h3><a href="../../">LPS - Venda de Ingressos</a> | Cadastro de Usuário</h3>
                         <hr>
                         <form action="./Private_Profile.php?acao=login&metodo=submit" method="post">
                             '. $this->mensagem .'

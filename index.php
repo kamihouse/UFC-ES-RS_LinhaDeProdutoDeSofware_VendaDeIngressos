@@ -14,9 +14,9 @@
         <title>Reuso de Software | Venda de Ingressos</title>
     </head>
     <body>
-        <h3>LPS - Venda de Ingressos | Bem vindo</h3>
+        <h3><a href="./">LPS - Venda de Ingressos</a> | Bem vindo</h3>
         <hr>
-        <p>Selecione uma das opções abaixo:</p>
+        <p>Selecione uma das opções no menu abaixo:</p>
         <ul>
             <?php
                 if(isset($GLOBALS['menu'])){
