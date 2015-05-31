@@ -32,8 +32,8 @@
             if(isset($GLOBALS['menu'])){
                 $GLOBALS['menu'][]           = 'Login';
                 $GLOBALS['menu'][]           = 'Cadastre-se';
-                $GLOBALS['menu']['login']    = 'Componentes/Profile/Private_Profile.php?acao=login';
-                $GLOBALS['menu']['cadastro'] = 'Componentes/Profile/Private_Profile.php?acao=cadastro';
+                $GLOBALS['menu']['login']    = '*Login|Componentes/Profile/Private_Profile.php?acao=login';
+                $GLOBALS['menu']['cadastro'] = '*Cadastre-se|Componentes/Profile/Private_Profile.php?acao=cadastro';
             }
         }
 
