@@ -37,8 +37,7 @@ if(!isset($_SESSION)){
 
         function init(){
             if(isset($GLOBALS['menu']))
-                $GLOBALS['menu'][]			= 'Suporte';
-				$GLOBALS['menu']['suporte']	= '*Suporte|Componentes/CustomerSupport/CustomerSupport.php?acao=suporte';
+				$GLOBALS['menu']['suporte']	= 'Suporte|Componentes/CustomerSupport/CustomerSupport.php?acao=suporte';
         }
         
 		function __construct(){

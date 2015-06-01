@@ -20,8 +20,7 @@
 	class FreeTicketsSortition{
         function init(){
             if(isset($GLOBALS['menu']))
-                $GLOBALS['menu'][] 				= 'Promoções';
-				$GLOBALS['menu']['promocoes'] 	= '*Promoções|Componentes/FreeTicketsSortition/FreeTicketsSortition.php?acao=exibe';
+				$GLOBALS['menu']['promocoes'] 	= 'Promoções|Componentes/FreeTicketsSortition/FreeTicketsSortition.php?acao=exibe';
         }
         
 		function __construct(){

@@ -19,8 +19,7 @@
 	class EventsSugestions{
         function init(){
             if(isset($GLOBALS['menu']))
-                $GLOBALS['menu'][]				= 'Eventos para você';
-				$GLOBALS['menu']['sugestao']	= '*Eventos para você|Componentes/EventsSugestions/EventsSugestions.php?acao=exibe';
+				$GLOBALS['menu']['sugestao']	= 'Eventos para você|Componentes/EventsSugestions/EventsSugestions.php?acao=exibe';
         }
         
 		function __construct(){

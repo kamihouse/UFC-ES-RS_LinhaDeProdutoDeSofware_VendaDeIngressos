@@ -46,10 +46,8 @@ if(!isset($_SESSION)){
 
         function init(){
 			if(isset($GLOBALS['menu'])){
-				$GLOBALS['menu'][]           = 'Login';
-				$GLOBALS['menu']['login']    = '*Login|Componentes/Profile/Profile.php?acao=login';
-				$GLOBALS['menu'][]           = 'Cadastre-se';
-				$GLOBALS['menu']['cadastro'] = '*Cadastre-se|Componentes/Profile/Profile.php?acao=cadastro';
+				$GLOBALS['menu']['login']    = 'Login|Componentes/Profile/Profile.php?acao=login';
+				$GLOBALS['menu']['cadastro'] = 'Cadastre-se|Componentes/Profile/Profile.php?acao=cadastro';
 			}
         }
         

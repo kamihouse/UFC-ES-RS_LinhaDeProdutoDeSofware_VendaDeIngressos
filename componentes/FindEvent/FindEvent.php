@@ -20,8 +20,7 @@
 	class FindEvent{
         function init(){
             if(isset($GLOBALS['menu']))
-                $GLOBALS['menu'][] = 'Buscar Evento';
-				$GLOBALS['menu']['buscar'] = '*Buscar Evento|Componentes/FindEvent/FindEvent.php?acao=exibe';
+				$GLOBALS['menu']['buscar'] = 'Buscar Evento|Componentes/FindEvent/FindEvent.php?acao=exibe';
         }
         
 		function __construct(){
