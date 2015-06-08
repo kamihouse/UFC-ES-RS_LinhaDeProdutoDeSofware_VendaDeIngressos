@@ -9,7 +9,7 @@ Reuso de Software - 2015/1
 (Profa: Carla Ilane Moreira Bezerra)
 
 ## Modelo de Features
-![alt tag](https://raw.githubusercontent.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos/master/_documentos/modelo_features_v1.1.png)
+![modelo features](https://raw.githubusercontent.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos/master/_documentos/modelo_features_v1.1.png)
 
 ## Artefatos
 - Matriz de Rastreabilidade: https://github.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos/blob/master/_documentos/Matriz-de-Rastreabilidade.xlsx
