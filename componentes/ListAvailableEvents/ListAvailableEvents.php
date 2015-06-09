@@ -10,8 +10,13 @@
 	// Trata ação do usuário
 	switch($acao){
 		case 'listar':
-			$login = new Profile();
+			$login = new ListAvailableEvents();
 			$login->exibeTelaListar();
+			break;
+		case 'favoritos':
+			include_once("AddToFavorites.php");
+			$eventos = new AddToFavorites();
+			$eventos->exibeTelaFavoritos();
 			break;
 
 	}
@@ -32,7 +37,9 @@
 
 
 		public function exibeTelaListar(){
+			$sessao = isset($_SESSION['nome']) ? $_SESSION['nome'] : null;
 
+			$favorito = in_array("addToFavorites", $this->customizar) ? '<li><a href="ListAvailableEvents.php?acao=favoritos">Adicionar a Favoritos</a> - AddToFavorites</li>' : null;
 			print('
                 <!DOCTYPE html>
                 <html>
@@ -47,9 +54,19 @@
                         <p>Eventos sugeridos para você: <b>'. $sessao .'</b></p>
 
 						<ul>
-							<li>Open Beer Festival - Premium Paulínia | Paulínia-SP</li>
+							<li>Open Beer Festival - Premium Paulínia | Paulínia-SP
+							<ul>
+								<li>Comprar - MakeAnOrder</li>
+								<li>99 - ShowNumberOfTicket</li>
+								'. $favorito .'
+								<li>Eventos Relacionados - FeaturedEvents</li>
+							</ul>
+							</li>
 							<li>Energia na Véia Junina - Clube Juventus | Irecê-BA</li>
 							<li>Dusk - Deep Love - Club 33 | São Paulo-SP</li>
+							<li>Open Beer Festival - Paulínia | Paulínia-SP</li>
+							<li>Véia Junina - Clube Juventus | Irecê-CE</li>
+							<li>Deep Love - Club 33 | São Paulo-SP</li>
 						</ul>
                     </body>
                 </html>
