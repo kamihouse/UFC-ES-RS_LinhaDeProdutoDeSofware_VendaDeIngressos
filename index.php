@@ -36,10 +36,12 @@
         </ul>
 
         <hr>
+        <!--
         <pre>
             <?php
                 var_dump($GLOBALS['link']);
             ?>
         </pre>
+        -->
     </body>
 </html>
