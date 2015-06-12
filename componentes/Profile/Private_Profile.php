@@ -1,7 +1,10 @@
 <?php
-if(!isset($_SESSION)){
-    session_start();
-}
+    require_once "../../sistema/SetupComponente.php";
+    $sc = new SetupComponente();
+
+    if(!isset($_SESSION)){
+        session_start();
+    }
 
 
 	class Private_Profile{
@@ -19,28 +22,21 @@ if(!isset($_SESSION)){
 
 
         public function exibePerfilPrivado(){
+            global $sc;
+            $sc->pprint('head');
+            ?>
+                <h3><a href="<?= $sc->base_url ?>">LPS - Venda de Ingressos</a> | Perfil Privado</h3>
+                <hr>
 
-            print('
-			<!DOCTYPE html>
-                <html>
-                    <head>
-                        <meta charset="utf-8">
-                        <title>LPS - Venda de Ingressos - Perfil Privado</title>
-                    </head>
-                    <body>
-                        <h3><a href="../../">LPS - Venda de Ingressos</a> | Perfil Privado</h3>
-                        <hr>
+                <p><img src="http://images.all-free-download.com/images/graphiclarge/user_90302.jpg"></p>
+                <p>Nome Completo: <?= $_SESSION['nome'] ?></p>
+                <p>Sexo: <?= $_SESSION['sexo'] ?></p>
+                <p>Cidade: <?= $_SESSION['cidade'] ?></p>
+                <p>Telefone: <?= $_SESSION['telefone'] ?></p>
 
-                        <p><img src="http://images.all-free-download.com/images/graphiclarge/user_90302.jpg"></p>
-                        <p>Nome Completo: '. $_SESSION['nome'] .'</p>
-						<p>Sexo: '. $_SESSION['sexo'] .'</p>
-						<p>Cidade: '. $_SESSION['cidade'] .'</p>
-						<p>Telefone: '. $_SESSION['telefone'] .'</p>
-
-						<hr>
-                        <p>Voltar para <a href="Profile.php?acao=usuarioLogado">Perfil</a></p>
-					</body>
-				</html>
-			');
+                <hr>
+                <p>Voltar para <a href="Profile.php?acao=usuarioLogado">Perfil</a></p>
+			<?php
+            $sc->pprint('loadjs');
         }
 	}

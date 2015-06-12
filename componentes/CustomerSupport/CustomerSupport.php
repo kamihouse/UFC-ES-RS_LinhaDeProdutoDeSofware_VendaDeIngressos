@@ -1,7 +1,10 @@
 <?php
-if(!isset($_SESSION)){
-	session_start();
-}
+    require_once "../../sistema/SetupComponente.php";
+    $sc = new SetupComponente();
+
+    if(!isset($_SESSION)){
+        session_start();
+    }
 
 	// Pega acao do usuário
 	$acao   = isset($_GET['acao']) ? $_GET['acao'] : null;
@@ -46,20 +49,14 @@ if(!isset($_SESSION)){
 
 
 		public function exibeTelaSuporte(){
-
-			print('
-			<!DOCTYPE html>
-                <html>
-                    <head>
-                        <meta charset="utf-8">
-                        <title>Titulo - Suporte</title>
-                    </head>
-                    <body>
-                        <h3><a href="../../">LPS - Venda de Ingressos</a> | Suporte</h3>
-                        <hr>
-						<p>Selecione a opção de suporte que deseja utilizar abaixo.</p>
-                        <ul>
-			');
+            global $sc;
+            $sc->pprint('head');
+			?>
+                <h3><a href="<?= $sc->base_url ?>">LPS - Venda de Ingressos</a> | Suporte</h3>
+                <hr>
+                <p>Selecione a opção de suporte que deseja utilizar abaixo.</p>
+                <ul>
+			<?php
 
 			if(in_array('bot', $this->customizar)){
 				echo '<li><a href="./CustomerSupport.php?acao=bot">BOT</a></li>';
@@ -72,11 +69,9 @@ if(!isset($_SESSION)){
 			if(in_array('chat', $this->customizar)){
 				echo '<li><a href="./CustomerSupport.php?acao=chat">Chat</a></li>';
 			}
-
-			print('
-						</ul>
-                    </body>
-                </html>
-			');
+            ?>
+                </ul>
+            <?php
+			$sc->pprint('loadjs');
 		}
 	}

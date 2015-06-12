@@ -1,7 +1,11 @@
 <?php
-if(!isset($_SESSION)){
-	session_start();
-}
+    require_once "../../sistema/SetupComponente.php";
+
+    $sc = new SetupComponente();
+
+    if(!isset($_SESSION)){
+        session_start();
+    }
 
 	// Pega acao do usuário
 	$acao   = isset($_GET['acao']) ? $_GET['acao'] : null;
@@ -44,17 +48,13 @@ if(!isset($_SESSION)){
 		protected $mensagem = null;
 		protected $customizar = array('publico', 'privado');
 
+
         function init(){
 			if(isset($GLOBALS['menu'])){
 				$GLOBALS['menu']['login']    = 'Login|Componentes/Profile/Profile.php?acao=login';
 				$GLOBALS['menu']['cadastro'] = 'Cadastre-se|Componentes/Profile/Profile.php?acao=cadastro';
 			}
         }
-        
-		function __construct(){
-			# code...
-		}
-
 
 		/**
 		 * Exibe a tela de login.
@@ -87,68 +87,55 @@ if(!isset($_SESSION)){
 				}
 			}
 
-			print('
-                <!DOCTYPE html>
-                <html>
-                    <head>
-                        <meta charset="utf-8">
-                        <title>LPS - Venda de Ingressos - Login</title>
-                    </head>
-                    <body>
-                        <h3><a href="../../">LPS - Venda de Ingressos</a></h3>
-                        <hr>
-			');
+            global $sc;
+            $sc->pprint('head');
+            ?>
+                <h3><a href="<?= $sc->base_url ?>">LPS - Venda de Ingressos</a></h3>
+                <hr>
+			<?php
 
 			if(isset($_SESSION['nome'])){
-				echo '<br>Olá <b>'. $_SESSION['nome'] .'</b> você já está logado. <a href="Profile.php?acao=usuarioLogado">Clique Aqui</a> para ir para sua home page.<br><br>' ;
+				echo '<br>Olá <b>'. $_SESSION['nome'] .'</b> você já está logado. <a href="./Profile.php?acao=usuarioLogado">Clique Aqui</a> para ir para sua home page.<br><br>' ;
 			}
 
-			print('
-                        <form action="./Profile.php?acao=login&metodo=submit" method="post">
-                            '. $this->mensagem .'
-                            <label for="login">Login:</label>
-                            <input type="text" name="login" />
+			?>
+                <form action="./Profile.php?acao=login&metodo=submit" method="post">
+                    <?= $this->mensagem ?>
+                    <label for="login">Login:</label>
+                    <input type="text" name="login" />
 
-                            <label for="senha">Senha:</label>
-                            <input type="text" name="senha" />
+                    <label for="senha">Senha:</label>
+                    <input type="text" name="senha" />
 
-                            <input type="submit" value="Entrar" />
-                        </form>
+                    <input type="submit" value="Entrar" />
+                </form>
 
-                        <p><a href="./Profile.php?acao=cadastro">Me Cadastrar</a></p>
-                    </body>
-                </html>
-            ');
+                <p><a href="./Profile.php?acao=cadastro">Me Cadastrar</a></p>
+            <?php
+            $sc->pprint('loadjs');
 		}
-
 
 		/**
 		 * Exibe a tela de Usuário já logado.
 		 */
 		public function exibeTelaUsuarioLogado(){
+            global $sc;
+            $sc->pprint('head');
+			?>
+                <h3><a href="<?= $sc->base_url ?>">LPS - Venda de Ingressos</a> | Bem vindo <?= $_SESSION['nome'] ?></h3>
+                <hr>
+                <p>
+                    <b>Usuário:</b> <?= $_SESSION['nome'] ?><br>
+                    <b>Data login:</b> <?= $_SESSION['momento'] ?><br>
+                </p>
+                <br>
 
-			print('
-                <!DOCTYPE html>
-                <html>
-                    <head>
-                        <meta charset="utf-8">
-                        <title>LPS - Venda de Ingressos - Bem vindo</title>
-                    </head>
-                    <body>
-                        <h3><a href="../../">LPS - Venda de Ingressos</a> | Bem vindo '. $_SESSION['nome'] .'</h3>
-                        <hr>
-                        <p>
-                            <b>Usuário:</b> '. $_SESSION['nome'] .'<br>
-                            <b>Data login:</b> '. $_SESSION['momento'] .'<br>
-                        </p>
-                        <br>
+                <p>
+                    - Acesse as opções de Perfil abaixo:
+                </p>
 
-                        <p>
-                            - Acesse as opções de Perfil abaixo:
-                        </p>
-
-                        <ul>
-			');
+                <ul>
+			<?php
 
 			if(in_array('publico', $this->customizar)){
 				echo '<li><a href="./Profile.php?acao=exibePerfilPublico">Exibir Perfil Público</a></li>';
@@ -159,13 +146,11 @@ if(!isset($_SESSION)){
 			}
 
 
-			print('
-						</ul>
-                        <p><a href="./Profile.php?acao=sair">Sair</a></p>
-                    </body>
-                </html>
-            ');
-
+			?>
+                </ul>
+                <p><a href="./Profile.php?acao=sair">Sair</a></p>
+            <?php
+            $sc->pprint('head');
 		}
 
 
@@ -174,56 +159,39 @@ if(!isset($_SESSION)){
 		 */
 		public function sair(){
 			session_destroy();
-
-			print('
-                <!DOCTYPE html>
-                <html>
-                    <head>
-                        <meta charset="utf-8">
-                        <title>LPS - Venda de Ingressos - Sessão encerrada com sucesso</title>
-
-                        <META http-equiv="refresh" content="3; URL=../../">
-                    </head>
-                    <body>
-                        <h3>LPS - Venda de Ingressos | Login encerrado</h3>
-                        <hr>
-                        <p>Aguarde para ser redirecionado para a página principal</p>
-                    </body>
-                </html>
-            ');
+            global $sc;
+            $sc->pprint('head');
+			?>
+                <h3><a href="<?= $sc->base_url ?>">LPS - Venda de Ingressos</a> | Login encerrado</h3>
+                <hr>
+                <p>Aguarde para ser redirecionado para a página principal</p>
+            <?php
+            $sc->pprint('loadjs');
 		}
-
 
 		/**
 		 * Exibe a tela de cadastro de usuário
 		 */
 		public function exibeTelaCadastro(){
-
-			print('
-                <!DOCTYPE html>
-                <html>
-                    <head>
-                        <meta charset="utf-8">
-                        <title>LPS - Venda de Ingressos - Cadastro de Usuário</title>
-                        </head>
-                    <body>
-                        <h3><a href="../../">LPS - Venda de Ingressos</a> | Cadastro de Usuário</h3>
-                        <hr>
-                        <form action="./Profile.php?acao=login&metodo=submit" method="post">
-                            '. $this->mensagem .'
-                            <label for="login">Login:</label>
-                            <input type="text" name="login" />
-                            <br>
-                            <label for="senha">Senha:</label>
-                            <input type="text" name="senha" />
-                            <br>
-                            <label for="nome">Nome Completo:</label>
-                            <input type="text" name="nome" />
-                            <br>
-                            <input type="submit" value="Cadastrar" />
-                        </form>
-                    </body>
-                </html>
-            ');
+            global $sc;
+            $sc->pprint('head');
+            ?>
+                <h3><a href="<?= $sc->base_url ?>">LPS - Venda de Ingressos</a> | Cadastro de Usuário</h3>
+                <hr>
+                <form action="./Profile.php?acao=login&metodo=submit" method="post">
+                    <?= $this->mensagem ?>
+                    <label for="login">Login:</label>
+                    <input type="text" name="login" />
+                    <br>
+                    <label for="senha">Senha:</label>
+                    <input type="text" name="senha" />
+                    <br>
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" name="nome" />
+                    <br>
+                    <input type="submit" value="Cadastrar" />
+                </form>
+            <?php
+            $sc->pprint('loadjs');
 		}
 	}

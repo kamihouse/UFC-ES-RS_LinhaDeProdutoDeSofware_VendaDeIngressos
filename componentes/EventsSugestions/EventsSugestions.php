@@ -1,4 +1,7 @@
 <?php
+    require_once "../../sistema/SetupComponente.php";
+    $sc = new SetupComponente();
+
 	if(!isset($_SESSION)){
 		session_start();
 	}
@@ -21,43 +24,34 @@
             if(isset($GLOBALS['menu']))
 				$GLOBALS['menu']['sugestao']	= 'Eventos para você|Componentes/EventsSugestions/EventsSugestions.php?acao=exibe';
         }
-        
-		function __construct(){
-			# code...
-		}
 
 		public function exibeSugestoes(){
 			$sessao = isset($_SESSION['nome']) ? $_SESSION['nome'] : null;
-			$conteudo = ('
-			<!DOCTYPE html>
-			<html>
-				<head>
-					<meta charset="utf-8">
-					<title>LPS - Venda de Ingressos - Sugestão de Evendos</title>
-				</head>
-				<body>
-					<h3><a href="../../">LPS - Venda de Ingressos</a> | Sugestão de Eventos</h3>
-					<hr>
+            global $sc;
 
-					<p>Eventos sugeridos para você: <b>'. $sessao .'</b></p>
-
-					<ul>
-						<li>Open Beer Festival - Premium Paulínia | Paulínia-SP</li>
-						<li>Energia na Véia Junina - Clube Juventus | Irecê-BA</li>
-						<li>Dusk - Deep Love - Club 33 | São Paulo-SP</li>
-					</ul>
-				</body>
-			</html>
-			');
+            $sc->pprint('head');
 
 			if(isset($sessao)){
-				print $conteudo;
-			} else {
-				print '
-				<h3><a href="../../">LPS - Venda de Ingressos</a> | Sugestão de Eventos</h3>
-				<p>Você precisa estar logado para visualizar nossas sugestões.</p>
-				<p><a href="../../Componentes/Profile/Profile.php?acao=login">Clique aqui para fazer login</a></p>
-				';
+                ?>
+                    <h3><a href="<?= $sc->base_url ?>">LPS - Venda de Ingressos</a> | Sugestão de Eventos</h3>
+                    <hr>
+
+                    <p>Eventos sugeridos para você: <b><?= $sessao ?></b></p>
+
+                    <ul>
+                        <li>Open Beer Festival - Premium Paulínia | Paulínia-SP</li>
+                        <li>Energia na Véia Junina - Clube Juventus | Irecê-BA</li>
+                        <li>Dusk - Deep Love - Club 33 | São Paulo-SP</li>
+                    </ul>
+                <?php
+            } else {
+                ?>
+                    <h3><a href="<?= $sc->base_url ?>">LPS - Venda de Ingressos</a> | Sugestão de Eventos</h3>
+                    <p>Você precisa estar logado para visualizar nossas sugestões.</p>
+                    <p><a href="<?= $sc->base_url ?>Componentes/Profile/Profile.php?acao=login">Clique aqui para fazer login</a></p>
+                <?php
 			}
+
+            $sc->pprint('loadjs');
 		}
 	}

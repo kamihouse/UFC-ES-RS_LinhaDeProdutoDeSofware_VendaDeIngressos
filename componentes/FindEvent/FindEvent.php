@@ -1,4 +1,7 @@
 <?php
+    require_once '../../sistema/SetupComponente.php';
+    $sc = new SetupComponente();
+
 	if(!isset($_SESSION)){
 		session_start();
 	}
@@ -22,46 +25,35 @@
             if(isset($GLOBALS['menu']))
 				$GLOBALS['menu']['buscar'] = 'Buscar Evento|Componentes/FindEvent/FindEvent.php?acao=exibe';
         }
-        
-		function __construct(){
-			# code...
-		}
-
 
 		public function exibeEventos(){
+            global $sc;
 			$sessao = isset($_SESSION['nome']) ? $_SESSION['nome'] : null;
 
-			print('
-			<!DOCTYPE html>
-			<html>
-				<head>
-					<meta charset="utf-8">
-					<title>LPS - Venda de Ingressos - Encontrar Eventos</title>
-				</head>
-				<body>
-					<h3><a href="../../">LPS - Venda de Ingressos</a> | Encontrar Eventos</h3>
-					<hr>
+            $sc->pprint('head');
+			?>
+                <h3><a href="<?= $sc->base_url ?>">LPS - Venda de Ingressos</a> | Encontrar Eventos</h3>
+                <hr>
 
-					<p>Busque os eventos que desejar abaixo: <b>'. $sessao .'</b></p>
+                <p>Busque os eventos que desejar abaixo: <b><?= $sessao ?></b></p>
 
-					<form action="#" method="post">
-                            <label for="login">Nome do Evento:</label>
-                            <input type="text" name="login" />
+                <form action="#" method="post">
+                    <label for="login">Nome do Evento:</label>
+                    <input type="text" name="login" />
 
-							<br><br>
-                            <label for="senha">Local do Evento:</label>
-                            <input type="text" name="senha" />
+                    <br><br>
+                    <label for="senha">Local do Evento:</label>
+                    <input type="text" name="senha" />
 
-							<br><br>
-                            <input type="submit" value="Encontrar evento" />
-                        </form>
-				</body>
-			</html>
-			');
-
+                    <br><br>
+                    <input type="submit" value="Encontrar evento" />
+                </form>
+			<?php
 
 			if(!$sessao){
 				echo '<p><a href="../../Componentes/Profile/Profile.php?acao=login">Clique aqui para fazer login</a> e melhorar sua busca.</p>';
 			}
+
+            $sc->pprint('loadjs');
 		}
 	}
