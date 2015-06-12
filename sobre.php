@@ -67,19 +67,26 @@
         </div>
 
         <div class="row geral">
-            <h4>Bem vindo ao sistema de Venda de Ingressos Online</h4>
+            <h4>Venda de Ingressos Online</h4>
             <p>
                 Um trabalho para a disciplina de <b>Reuso de Software</b> 2015.1 da <b>Universidade Federal do Ceará</b> - Campus Quixadá.
             </p>
-
-            <hr>
+            <br>
             <blockquote>
                 <p>
-                    <b>Instruções:</b><br>
-                    Selecione o módulo que desejar no Menu superior <b>Módulos do Sistema</b> para acessar<br>
-                    Mais detalhes sobre essa aplicação, utilize o link também disponível no menu <b>Sobre Nós</b>
+                    <b>Alunos:</b><br>
+                    - Thiago Pereira<br>
+                    - Matheus Souza<br>
+                    - Natasha Silveira<br>
+                    - Marcilio Valoir
                 </p>
-                <small>Equipe: Venda de Ingressos</small>
+            </blockquote>
+
+            <blockquote>
+                <p>
+                    <b>Professora:</b><br>
+                    - Carla Ilane Moreira Bezerra
+                </p>
             </blockquote>
         </div>
     </div>
