@@ -1,0 +1,61 @@
+.geral{
+    padding: 0 20px;
+}
+.logo{
+    width:100%;
+    margin:0 auto;
+    overflow:hidden;
+    padding:3px 0 1px;
+    font-size: 1em;
+}
+
+.logo > h1{
+    margin:0;
+    font-size: 3em;
+    text-align:center;
+    line-height:130px;
+    font-weight:100;
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    letter-spacing: -2px;
+}
+.logo > h1 > span::before{
+    display:inline-block;
+    vertical-align:top;
+    margin:21px 12px 0 20px;
+    background:url(../img/flatuilogo.png) no-repeat;
+    width:131px;
+    height:93px;
+    content:'';
+}
+.logo > h1 > span{
+    font-weight:normal;
+    color:#00a185;
+}
+.logo > h1 > dt{
+    display: inline;
+    font-size: 16px;
+    position: absolute;
+    top: 18px;
+    background: #1abc9c;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 37px;
+    text-align: center;
+    letter-spacing: 0;
+    color: #fff;
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    transform: translateY(-5px);
+    -webkit-animation: showVersion 0.5s cubic-bezier(.47,.71,.31,1);
+    -moz-animation: showVersion 0.5s cubic-bezier(.47,.71,.31,1);
+    -ms-animation: showVersion 0.5s cubic-bezier(.47,.71,.31,1);
+    -o-animation: showVersion 0.5s cubic-bezier(.47,.71,.31,1);
+    animation: showVersion 0.5s cubic-bezier(.47,.71,.31,1);
+    font-weight: 500;
+    letter-spacing: -1px;
+    box-sizing: border-box;
+    text-indent:-1px;
+}

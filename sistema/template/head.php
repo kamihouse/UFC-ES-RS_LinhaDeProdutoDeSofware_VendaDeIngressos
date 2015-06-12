@@ -18,6 +18,7 @@
 
         <!-- Loading Flat UI -->
         <link href="<?= $sc->base_url ?>assets/css/flat-ui.min.css" rel="stylesheet">
+        <link href="<?= $sc->base_url ?>assets/css/geral.css" rel="stylesheet">
 
         <link rel="shortcut icon" href="<?= $sc->base_url ?>assets/img/favicon.ico">
     </head>
