@@ -61,8 +61,7 @@
 					<div class="row">
 						<nav class="navbar navbar-inverse navbar-embossed" role="navigation">
 							<div class="navbar-header">
-								<button type="button" class="navbar-toggle" data-toggle="collapse"
-										data-target="#navbar-collapse-01">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
 									<span class="sr-only">Toggle navigation</span>
 								</button>
 								<a class="navbar-brand" href="<?= $sc->base_url ?>">Bem Vindo &nbsp;&nbsp; </a>
@@ -77,8 +76,7 @@
 									}
 									?>
 									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Módulos do Sistema<b
-												class="caret"></b></a>
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Módulos do Sistema<b class="caret"></b></a>
 										<span class="dropdown-arrow"></span>
 										<ul class="dropdown-menu">
 											<li><a href="<?= $sc->base_url ?>">Home</a></li>
