@@ -1,5 +1,5 @@
 # Linha de Produtos de Sofware - Venda De Ingressos Online
-Seguindo os conceitos de Linha de Produto de Software, desenvolvemos um conjunto básico de sistemas de software que têm um determinado conjunto de funcionalidades em comum, e que satisfazem as necessidades de um determinado segmento de mercado (venda de ingressos online), e que são desenvolvidos tendo a mesma base (core).
+Seguindo os conceitos de Linha de Produto de Software, desenvolvemos um conjunto básico de sistemas de software de código aberto que têm um determinado conjunto de funcionalidades em comum, que satisfazem as necessidades de um determinado segmento de mercado (venda de ingressos online) e que são desenvolvidos tendo a mesma base (core).
 Os componentes e o software como um todo são facilmente customizados.
 
 Universidade Federal do Ceará (Campus Quixadá) - Engenharia de Software
@@ -29,3 +29,7 @@ Reuso de Software - 2015/1
 |PHP            |5.6+   |
 |FeatureIDE     |2.7.4  |
 |Eclipse Luna   |4.4.2  |
+
+### Screenshots
+![principal](https://raw.githubusercontent.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos/master/_documentos/principal.png)
+![login](https://raw.githubusercontent.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos/master/_documentos/login.png)

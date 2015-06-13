@@ -68,7 +68,7 @@
             <br>
             <blockquote>
                 <p>
-                    <b>Alunos:</b><br>
+                    <b><span class="fui-clip"></span> Alunos:</b><br>
                     - Thiago Pereira<br>
                     - Matheus Souza<br>
                     - Natasha Silveira<br>
@@ -78,8 +78,15 @@
 
             <blockquote>
                 <p>
-                    <b>Professora:</b><br>
+                    <b><span class="fui-star-2"></span> Professora:</b><br>
                     - Carla Ilane Moreira Bezerra
+                </p>
+            </blockquote>
+
+            <blockquote>
+                <p>
+                    <b><span class="fui-bookmark"></span> Repositório:</b><br>
+                    <a href="https://github.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos" target="_blank">UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos</a>
                 </p>
             </blockquote>
         </div>

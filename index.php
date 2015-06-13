@@ -63,7 +63,7 @@
         <div class="row geral">
             <h4>Bem vindo ao sistema de Venda de Ingressos Online</h4>
             <p>
-                Um trabalho para a disciplina de <b>Reuso de Software</b> 2015.1 da <b>Universidade Federal do Ceará</b> - Campus Quixadá.
+                Um trabalho para a disciplina de <b>Reuso de Software</b> 2015.1 do curso de <b>ES</b> da <b>Universidade Federal do Ceará</b> - Campus Quixadá.
             </p>
 
             <hr>
@@ -75,6 +75,13 @@
                 </p>
                 <small>Equipe: Venda de Ingressos</small>
             </blockquote>
+
+            <hr>
+            <p>
+                <span class="fui-bookmark"></span> Repositório: <a href="https://github.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos" target="_blank">UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos</a>
+                <br>
+                <small>Seguindo os conceitos de Linha de Produto de Software, desenvolvemos um conjunto básico de sistemas de <b>software de código aberto</b> que têm um determinado conjunto de funcionalidades em comum, que satisfazem as necessidades de um determinado segmento de mercado (venda de ingressos online) e que são desenvolvidos tendo a mesma base (core). Os componentes e o software como um todo são facilmente customizados.</small>
+            </p>
         </div>
     </div>
 </div>

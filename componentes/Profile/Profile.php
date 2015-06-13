@@ -76,16 +76,35 @@ class Profile
                 $_SESSION['login'] = 'admin';
                 $_SESSION['nome'] = 'Thiago Pereira';
                 $_SESSION['sexo'] = 'Masculino';
-                $_SESSION['cidade'] = 'Quixadá';
+                $_SESSION['cidade'] = 'Quixadá - CE';
                 $_SESSION['telefone'] = '(88) 9939-6187';
                 $_SESSION['momento'] = date('d/m/Y H:i:s');
+                $_SESSION['email'] = 'thiago@omradio.ml';
+                $_SESSION['foto'] = 'gravatar.jpg';
 
 
                 // Exibe tela para usuário logado
                 header("Location: ./Profile.php?acao=usuarioLogado");
 
                 exit();
-            } else {
+            } if ($login == 'carla' AND $senha == 'carla') {
+                // Registra sessão
+                $_SESSION['login'] = 'carla';
+                $_SESSION['nome'] = 'Carla Ilane M. Bezerra';
+                $_SESSION['sexo'] = 'Feminino';
+                $_SESSION['cidade'] = 'Fortaleza - CE';
+                $_SESSION['telefone'] = '(89) 993-865-618';
+                $_SESSION['momento'] = date('d/m/Y H:i:s');
+                $_SESSION['email'] = 'carla@omradio.ml';
+                $_SESSION['foto'] = 'gravatar1.jpg';
+
+
+                    // Exibe tela para usuário logado
+                    header("Location: ./Profile.php?acao=usuarioLogado");
+
+                    exit();
+            }
+            else {
                 $this->mensagem = '<span class="fui-info-circle"> <small>Verifique seu login e senha.</small></span>';
             }
         }
@@ -278,7 +297,7 @@ class Profile
                     ?>
                         <div class="col-xs-4">
                             <div class="demo-download">
-                                <img src="<?= $sc->base_url ?>/assets/img/icons/svg/retina.svg" type="image/svg+xml">
+                                <img src="<?= $sc->base_url ?>/assets/img/icons/svg/retina.svg">
                             </div>
                             <a href="./Profile.php?acao=exibePerfilPublico" class="btn btn-primary btn-lg btn-block">Exibir Perfil
                                 Público</a>
@@ -295,7 +314,7 @@ class Profile
                     ?>
                         <div class="col-xs-4">
                             <div class="demo-download">
-                                <img src="<?= $sc->base_url ?>/assets/img/icons/svg/book.svg" type="image/svg+xml">
+                                <img src="<?= $sc->base_url ?>/assets/img/icons/svg/book.svg">
                             </div>
                             <a href="./Profile.php?acao=exibePerfilPrivado" class="btn btn-danger btn-lg btn-block">Exibir Perfil
                                 Privado</a>
@@ -309,7 +328,7 @@ class Profile
             </div>
         </div>
         <?php
-        $sc->pprint('head');
+        $sc->pprint('loadjs');
     }
 
 
@@ -322,6 +341,8 @@ class Profile
         global $sc;
         $sc->pprint('head');
         ?>
+        <META http-equiv="refresh" content="3;URL=<?= $sc->base_url ?>">
+
         <div class="container">
             <div class="logo">
                 <h1>UFC RS - LPS<span>Venda de Ingressos</span>
@@ -388,10 +409,14 @@ class Profile
                 <div class="row geral">
                     <h4>Logoff</h4>
 
-                    <p>
-                        Aguarde...<br>
-                        Encerrando sua sessão.
-                    </p>
+                    <div class="col-xs-12">
+                        <p>
+                            Aguarde...<br>
+                            Estamos encerrando sua sessão ativa...
+                        </p>
+                        <img src="<?= $sc->base_url ?>assets/img/loading.gif" />
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -472,7 +497,6 @@ class Profile
 
                 <div class="row geral">
                     <h4>Cadastro</h4>
-
                     <p>
                         Utilize seus dados pessoais abaixo para efetuar seu cadastro e acessar nosso sistema
                     </p>
@@ -498,8 +522,7 @@ class Profile
                                 <input type="submit" class="btn btn-block btn-lg btn-primary" value="Cadastrar"/>
                             </div>
                             <div class="form-group">
-                                <a href="./Profile.php?acao=login" class="btn btn-block btn-lg btn-info">Já possuo um
-                                    Login</a>
+                                <a href="./Profile.php?acao=login" class="btn btn-block btn-lg btn-info">Já possuo um Login</a>
                             </div>
                         </div>
                     </form>
