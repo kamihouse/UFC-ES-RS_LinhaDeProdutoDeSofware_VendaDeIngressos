@@ -17,8 +17,8 @@ Reuso de Software - 2015/1
 - Modelo de Features: https://raw.githubusercontent.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos/master/_documentos/modelo_features_v1.1.png
 
 ### Equipe
-- Matheus Souza de Carvalho
 - Thiago Pereira Rosa
+- Matheus Souza de Carvalho
 - Marcílio Valois
 - Natasha Pinheiro
 
@@ -29,7 +29,9 @@ Reuso de Software - 2015/1
 |PHP            |5.6+   |
 |FeatureIDE     |2.7.4  |
 |Eclipse Luna   |4.4.2  |
+|Apache Server  |2.4+   |
 
 ### Screenshots
 ![principal](https://raw.githubusercontent.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos/master/_documentos/principal.png)
 ![login](https://raw.githubusercontent.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos/master/_documentos/login.png)
+![suporte](https://raw.githubusercontent.com/kamihouse/UFC-ES-RS_LinhaDeProdutoDeSofware_VendaDeIngressos/master/_documentos/suporte.png)
