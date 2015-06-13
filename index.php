@@ -5,9 +5,9 @@
     $sc = new SetupComponente();
     $sc->pprint('head');
 ?>
-<div class="container">
+<div class="container" xmlns="http://www.w3.org/1999/html">
     <div class="logo">
-        <h1>UFC RS - LPS<span>Venda de Ingressos</span><dt>2.0</dt></h1>
+        <h1><simple class="hidden-sm hidden-xs">UFC RS - LPS</simple> <span>Venda de Ingressos</span><dt>2.0</dt></h1>
     </div>
 
     <div class="col-xs-12">
