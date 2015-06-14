@@ -11,6 +11,7 @@
 	function ls(){
 		return preg_grep('/^([^.])/', scandir(getcwd()));
 	}
+
     $sc = new SetupComponente();
 
     $path_componentes = 'componentes';

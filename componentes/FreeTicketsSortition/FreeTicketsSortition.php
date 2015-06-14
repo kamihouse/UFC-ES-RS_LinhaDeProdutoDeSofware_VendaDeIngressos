@@ -28,6 +28,11 @@
 				$GLOBALS['menu']['promocoes'] 	= 'Promoções|Componentes/FreeTicketsSortition/FreeTicketsSortition.php?acao=exibe';
         }
 
+
+		function __construct(){
+			# code...
+		}
+
 		public function exibePromocao(){
             global $sc;
 			$sessao = isset($_SESSION['nome']) ? $_SESSION['nome'] : null;

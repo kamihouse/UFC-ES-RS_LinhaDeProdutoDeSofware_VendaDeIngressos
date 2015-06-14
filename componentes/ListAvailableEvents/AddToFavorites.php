@@ -33,11 +33,14 @@
                         </p>
                         <hr>
 
-                        <p><b>Evento adicionado aos favoritos com sucesso!</b></p>
+                        <img src="<?= base_url() ?>assets/img/icons/svg/book.svg" alt="Pensils">
+                        <br><br>
+                        <p><span class="fui-check-circle"></span> Evento adicionado aos <b>Favoritos</b> com sucesso!<br>
+                        Obrigado por adicionar este eventos à seus Favoritos. Utilize o botão abaixo para voltar para página anterior.</p>
 
                         <hr>
-                        <div class="row col-xs-4">
-                            <a href="ListAvailableEvents.php?acao=listar" class="btn btn-block btn-lg btn-inverse">Voltar para Eventos Sugeridos</a>
+                        <div class="row col-xs-3">
+                            <a href="ListAvailableEvents.php?acao=listar" class="btn btn-block btn-lg btn-inverse">Voltar para Eventos</a>
                         </div>
                     </div>
                 </div>

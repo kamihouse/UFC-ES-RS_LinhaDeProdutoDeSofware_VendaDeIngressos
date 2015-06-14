@@ -23,7 +23,16 @@
 			$eventos = new AddToFavorites();
 			$eventos->exibeTelaFavoritos();
 			break;
-
+        case 'relacionados':
+            include_once("FeaturedEvents.php");
+            $relacionados = new FeaturedEvents();
+            $relacionados->exibeEventosRelacionados();
+            break;
+        case 'comprar':
+            include_once("MakeAnOrder.php");
+            $comprar = new MakeAnOrder();
+            $comprar->comprar();
+            break;
 	}
 
 	class ListAvailableEvents{
@@ -38,6 +47,9 @@
 		public function exibeTelaListar(){
 			$sessao = isset($_SESSION['nome']) ? $_SESSION['nome'] : null;
 			$favorito = in_array("addToFavorites", $this->customizar) ? '<a class="btn btn-info btn-large btn-block" href="ListAvailableEvents.php?acao=favoritos">Adicionar aos Favoritos</a>' : null;
+            $relacionado = in_array("featuredEvents", $this->customizar) ? '<a class="btn btn-inverse btn-large btn-block" href="ListAvailableEvents.php?acao=relacionados">Eventos Relacionados</a>' : null;
+            $comprar = in_array("makeAnOrder", $this->customizar) ? '<a class="btn btn-primary btn-large btn-block" href="ListAvailableEvents.php?acao=comprar">Comprar</a>' : null;
+            $nTickets = in_array("showNumberOfTicket", $this->customizar) ? '<h5>'. rand(100, 9999).' <small style="color: inherit; font-size: .56em">Ingressos disponíveis</small></h5>' : null;
 
             global $sc;
             $sc->pprint('head');
@@ -61,11 +73,12 @@
                                 <img src="<?= $sc->base_url ?>/assets/img/icons/svg/gift-box.svg" class="tile-image big-illustration">
                                 <h3 class="tile-title">14/06/2015</h3>
                                 <p>Uma noite no museu - Fortaleza Reggae Clube</p>
+                                <?= $nTickets ?>
 
                                 <a class="btn btn-default btn-large btn-block" href="#">Visualizar este evento</a>
                                 <?= $favorito ?>
-                                <a class="btn btn-default btn-large btn-block" href="#">Eventos Relacionados</a>
-                                <a class="btn btn-primary btn-large btn-block" href="#">Comprar</a>
+                                <?= $relacionado ?>
+                                <?= $comprar ?>
                             </div>
                         </div>
                         <div class="col-xs-4">
@@ -73,10 +86,12 @@
                                 <img src="<?= $sc->base_url ?>/assets/img/icons/svg/toilet-paper.svg" class="tile-image big-illustration">
                                 <h3 class="tile-title">17/06/2015</h3>
                                 <p>Dusk - The Deep Love - Social Club 33</p>
+                                <?= $nTickets ?>
+
                                 <a class="btn btn-default btn-large btn-block" href="#">Visualizar este evento</a>
                                 <?= $favorito ?>
-                                <a class="btn btn-default btn-large btn-block" href="#">Eventos Relacionados</a>
-                                <a class="btn btn-primary btn-large btn-block" href="#">Comprar</a>
+                                <?= $relacionado ?>
+                                <?= $comprar ?>
                             </div>
                         </div>
                         <div class="col-xs-4">
@@ -84,10 +99,12 @@
                                 <img src="<?= $sc->base_url ?>/assets/img/icons/svg/calendar.svg" class="tile-image big-illustration">
                                 <h3 class="tile-title">24/06/2015</h3>
                                 <p>100% convertable to HTML/CSS layout.</p>
+                                <?= $nTickets ?>
+
                                 <a class="btn btn-default btn-large btn-block" href="#">Visualizar este evento</a>
                                 <?= $favorito ?>
-                                <a class="btn btn-default btn-large btn-block" href="#">Eventos Relacionados</a>
-                                <a class="btn btn-primary btn-large btn-block" href="#">Comprar</a>
+                                <?= $relacionado ?>
+                                <?= $comprar ?>
                             </div>
                         </div>
                     </div>

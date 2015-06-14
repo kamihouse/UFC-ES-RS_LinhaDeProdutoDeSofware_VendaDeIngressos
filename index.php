@@ -70,8 +70,8 @@
             <blockquote>
                 <p>
                     <b>Instruções:</b><br>
-                    Selecione o módulo que desejar no Menu superior <b>Módulos do Sistema</b> para acessar<br>
-                    Mais detalhes sobre essa aplicação, utilize o link também disponível no menu <b>Sobre Nós</b>
+                    Selecione o módulo que desejar no Menu superior <b>Módulos do Sistema</b> para acessar as features.<br>
+                    Mais detalhes sobre essa aplicação, utilize o link abaixo que também está disponível com mais detalhes no menu <b>Sobre Nós</b>.
                 </p>
                 <small>Equipe: Venda de Ingressos</small>
             </blockquote>
