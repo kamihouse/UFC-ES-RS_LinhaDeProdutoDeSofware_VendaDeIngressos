@@ -18,17 +18,17 @@
 			$suporte->exibeTelaSuporte();
 			break;
 		case 'bot':
-			include_once 'BOT.php';
+			require_once 'BOT.php';
 			$suporte = new BOT();
 			$suporte->exibeTelaBot();
 			break;
 		case 'email':
-			include_once 'Email_Support.php';
+			require_once 'Email_Support.php';
 			$suporte = new Email_Support();
 			$suporte->exibeTelaEmail();
 			break;
 		case 'chat':
-			include_once 'Chat.php';
+			require_once 'Chat.php';
 			$suporte = new Chat();
 			$suporte->exibeTelaChat();
 			break;
@@ -41,7 +41,7 @@
 
         function init(){
             if(isset($GLOBALS['menu']))
-				$GLOBALS['menu']['suporte']	= 'Suporte|Componentes/CustomerSupport/CustomerSupport.php?acao=suporte';
+				$GLOBALS['menu']['suporte']	= 'Suporte|componentes/CustomerSupport/CustomerSupport.php?acao=suporte';
         }
 
 		public function exibeTelaSuporte(){
@@ -68,7 +68,7 @@
 						?>
 							<div class="col-xs-4">
 								<div class="demo-download">
-									<img src="<?= $sc->base_url ?>/assets/img/icons/svg/clocks.svg">
+									<img src="<?= $sc->base_url ?>assets/img/icons/svg/clocks.svg">
 								</div>
 								<a href="./CustomerSupport.php?acao=bot" class="btn btn-primary btn-lg btn-block">BOT</a>
 
@@ -83,7 +83,7 @@
 						?>
 							<div class="col-xs-4">
 								<div class="demo-download">
-									<img src="<?= $sc->base_url ?>/assets/img/icons/svg/mail.svg">
+									<img src="<?= $sc->base_url ?>assets/img/icons/svg/mail.svg">
 								</div>
 								<a href="./CustomerSupport.php?acao=email" class="btn btn-primary btn-lg btn-block">Email</a>
 
@@ -98,7 +98,7 @@
 							?>
 							<div class="col-xs-4">
 								<div class="demo-download">
-									<img src="<?= $sc->base_url ?>/assets/img/icons/svg/clipboard.svg">
+									<img src="<?= $sc->base_url ?>assets/img/icons/svg/clipboard.svg">
 								</div>
 								<a href="./CustomerSupport.php?acao=chat" class="btn btn-primary btn-lg btn-block">Chat</a>
 								<p class="demo-download-text">Clique para Suporte via Chat</p>

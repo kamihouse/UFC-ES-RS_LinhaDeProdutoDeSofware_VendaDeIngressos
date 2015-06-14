@@ -40,7 +40,7 @@
 
         function init(){
             if(isset($GLOBALS['menu']))
-				$GLOBALS['menu']['listar']	= 'Eventos Disponíveis|Componentes/ListAvailableEvents/ListAvailableEvents.php?acao=listar';
+				$GLOBALS['menu']['listar']	= 'Eventos Disponíveis|componentes/ListAvailableEvents/ListAvailableEvents.php?acao=listar';
         }
 
 		public function exibeTelaListar(){
@@ -69,7 +69,7 @@
 
                         <div class="col-xs-4">
                             <div class="tile">
-                                <img src="<?= $sc->base_url ?>/assets/img/icons/svg/gift-box.svg" class="tile-image big-illustration">
+                                <img src="<?= $sc->base_url ?>assets/img/icons/svg/gift-box.svg" class="tile-image big-illustration">
                                 <h3 class="tile-title">14/06/2015</h3>
                                 <p>Uma noite no museu - Fortaleza Reggae Clube</p>
                                 <?= $nTickets ?>
@@ -82,7 +82,7 @@
                         </div>
                         <div class="col-xs-4">
                             <div class="tile">
-                                <img src="<?= $sc->base_url ?>/assets/img/icons/svg/toilet-paper.svg" class="tile-image big-illustration">
+                                <img src="<?= $sc->base_url ?>assets/img/icons/svg/toilet-paper.svg" class="tile-image big-illustration">
                                 <h3 class="tile-title">17/06/2015</h3>
                                 <p>Dusk - The Deep Love - Social Club 33</p>
                                 <?= $nTickets ?>
@@ -95,7 +95,7 @@
                         </div>
                         <div class="col-xs-4">
                             <div class="tile">
-                                <img src="<?= $sc->base_url ?>/assets/img/icons/svg/calendar.svg" class="tile-image big-illustration">
+                                <img src="<?= $sc->base_url ?>assets/img/icons/svg/calendar.svg" class="tile-image big-illustration">
                                 <h3 class="tile-title">24/06/2015</h3>
                                 <p>100% convertable to HTML/CSS layout.</p>
                                 <?= $nTickets ?>

@@ -1,6 +1,5 @@
 <?php
     require_once "../../sistema/SetupComponente.php";
-    require_once "../../sistema/setup.php";
 
     $sc = new SetupComponente();
 
@@ -35,7 +34,7 @@
 						<hr>
 
                         <div class="col-xs-12">
-                            <p><img src="<?= $sc->base_url ?>/assets/img/icons/svg/mail.svg"></p>
+                            <p><img src="<?= $sc->base_url ?>assets/img/icons/svg/mail.svg"></p>
                             <p>Envie um email com sua dúvida para: <b>contato@suporte.com.br</b></p>
 
                             <div class="btn-group">
@@ -43,7 +42,7 @@
                                 <ul role="menu" class="dropdown-menu">
                                     <li><a href="./CustomerSupport.php?acao=suporte">Voltar para opções de Suporte</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="<?= $sc->base_url ?>Componentes/Profile/Profile.php?acao=sair">Sair</a></li>
+                                    <li><a href="<?= $sc->base_url ?>componentes/Profile/Profile.php?acao=sair">Sair</a></li>
                                 </ul>
                             </div>
                         </div>

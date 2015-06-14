@@ -14,7 +14,7 @@
 
 	// Trata ação do usuário
 	switch($acao){
-		case 'exibe':
+		case 'exibeEvento':
 			$eventos = new FindEvent();
 			$eventos->exibeEventos();
 			break;
@@ -24,7 +24,7 @@
 	class FindEvent{
         function init(){
             if(isset($GLOBALS['menu']))
-				$GLOBALS['menu']['buscar'] = 'Buscar Evento|Componentes/FindEvent/FindEvent.php?acao=exibe';
+				$GLOBALS['menu']['buscar'] = 'Buscar Evento|componentes/FindEvent/FindEvent.php?acao=exibeEvento';
         }
 
 		public function exibeEventos(){
@@ -51,7 +51,7 @@
 							<div class="form-group">
 								<?php
 								if(!$sessao){
-									echo '<p><a href="'.$sc->base_url.'Componentes/Profile/Profile.php?acao=login">Clique aqui para fazer login</a> e melhorar sua busca.</p>';
+									echo '<p><a href="'.$sc->base_url.'componentes/Profile/Profile.php?acao=login">Clique aqui para fazer login</a> e melhorar sua busca.</p>';
 								}
 								?>
 							</div>

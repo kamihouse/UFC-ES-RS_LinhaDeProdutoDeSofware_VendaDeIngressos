@@ -14,7 +14,7 @@
                 <?php
                 if (isset($_SESSION['nome'])) {
                     echo '<li>';
-                    echo '<a href="' . $sc->base_url . 'Componentes/Profile/Profile.php?acao=usuarioLogado">' . $_SESSION['nome'] . '<span class="navbar-unread">1</span></a>';
+                    echo '<a href="' . $sc->base_url . 'componentes/Profile/Profile.php?acao=usuarioLogado">' . $_SESSION['nome'] . '<span class="navbar-unread">1</span></a>';
                     echo '</li>';
                 }
                 ?>

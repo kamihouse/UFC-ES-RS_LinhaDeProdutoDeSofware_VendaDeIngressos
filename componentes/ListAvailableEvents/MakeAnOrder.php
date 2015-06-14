@@ -1,4 +1,8 @@
 <?php
+    require_once "../../sistema/SetupComponente.php";
+
+    $sc = new SetupComponente();
+
 	if(!isset($_SESSION)){
 		session_start();
 	}
@@ -7,10 +11,6 @@
         function init(){
             
         }
-        
-		function __construct(){
-			# code...
-		}
 
 		public function comprar(){
 			$sessao = isset($_SESSION['nome']) ? $_SESSION['nome'] : null;
@@ -42,7 +42,7 @@
 						</div>
 
 						<div class="col-xs-3">
-							<a href="<?= base_url() ?>Componentes/ListAvailableEvents/ListAvailableEvents.php?acao=listar" class="btn btn-block btn-lg btn-inverse">Voltar para Eventos</a>
+							<a href="<?= base_url() ?>componentes/ListAvailableEvents/ListAvailableEvents.php?acao=listar" class="btn btn-block btn-lg btn-inverse">Voltar para Eventos</a>
 						</div>
 					</div>
 				</div>

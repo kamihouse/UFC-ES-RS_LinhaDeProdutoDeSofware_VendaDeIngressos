@@ -14,7 +14,7 @@
 
 	// Trata ação do usuário
 	switch($acao){
-		case 'exibe':
+		case 'exibePromocao':
 			$eventos = new FreeTicketsSortition();
 			$eventos->exibePromocao();
 			break;
@@ -24,7 +24,7 @@
 	class FreeTicketsSortition{
         function init(){
             if(isset($GLOBALS['menu']))
-				$GLOBALS['menu']['promocoes'] 	= 'Promoções|Componentes/FreeTicketsSortition/FreeTicketsSortition.php?acao=exibe';
+				$GLOBALS['menu']['promocoes'] 	= 'Promoções|componentes/FreeTicketsSortition/FreeTicketsSortition.php?acao=exibePromocao';
         }
 
 		public function exibePromocao(){
@@ -49,12 +49,12 @@
 
 						<?php
 						if(!$sessao){
-							echo '<p><span class="fui-info-circle"></span> <a href="../../Componentes/Profile/Profile.php?acao=login">Clique Aqui para fazer login</a> e exibir as promoções detalhadas para o seu perfil.</p>';
+							echo '<p><span class="fui-info-circle"></span> <a href="'.$sc->base_url.'componentes/Profile/Profile.php?acao=login">Clique Aqui para fazer login</a> e exibir as promoções detalhadas para o seu perfil.</p>';
 						}
 						?>
 						<div class="col-xs-4">
 							<div class="tile">
-								<img src="<?= $sc->base_url ?>/assets/img/icons/svg/compas.svg" class="tile-image big-illustration">
+								<img src="<?= $sc->base_url ?>assets/img/icons/svg/compas.svg" class="tile-image big-illustration">
 								<h3 class="tile-title"><span style="color: red;">30%</span> - 13/06/2015</h3>
 								<p>Energia na Véia Junina - Clube Juventus</p>
 								<a class="btn btn-primary btn-large btn-block" href="#">Visualizar este evento</a>
@@ -62,7 +62,7 @@
 						</div>
 						<div class="col-xs-4">
 							<div class="tile">
-								<img src="<?= $sc->base_url ?>/assets/img/icons/svg/gift-box.svg" class="tile-image big-illustration">
+								<img src="<?= $sc->base_url ?>assets/img/icons/svg/gift-box.svg" class="tile-image big-illustration">
 								<h3 class="tile-title"><span style="color: red;">10%</span> - 14/06/2015</h3>
 								<p>Uma noite no museu - Fortaleza Reggae Clube</p>
 								<a class="btn btn-primary btn-large btn-block" href="#">Visualizar este evento</a>
@@ -70,7 +70,7 @@
 						</div>
 						<div class="col-xs-4">
 							<div class="tile">
-								<img src="<?= $sc->base_url ?>/assets/img/icons/svg/paper-bag.svg" class="tile-image big-illustration">
+								<img src="<?= $sc->base_url ?>assets/img/icons/svg/paper-bag.svg" class="tile-image big-illustration">
 								<h3 class="tile-title"><span style="color: red;">40%</span> - 17/06/2015</h3>
 								<p>Dusk - The Deep Love - Social Club 33</p>
 								<a class="btn btn-primary btn-large btn-block" href="#">Visualizar este evento</a>

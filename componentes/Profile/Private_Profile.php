@@ -48,7 +48,7 @@
                                 <ul role="menu" class="dropdown-menu">
                                     <li><a href="Profile.php?acao=usuarioLogado">Voltar para Minha Conta</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="<?= $sc->base_url ?>Componentes/Profile/Profile.php?acao=sair">Sair</a></li>
+                                    <li><a href="<?= $sc->base_url ?>componentes/Profile/Profile.php?acao=sair">Sair</a></li>
                                 </ul>
                             </div>
                         </div>

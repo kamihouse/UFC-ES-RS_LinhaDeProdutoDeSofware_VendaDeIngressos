@@ -1,16 +1,16 @@
 <?php
+    require_once "../../sistema/SetupComponente.php";
+
+    $sc = new SetupComponente();
+
 	if(!isset($_SESSION)){
 		session_start();
 	}
 
 	class FeaturedEvents{
         function init(){
-            
+
         }
-        
-		function __construct(){
-			# code...
-		}
 
 		public function exibeEventosRelacionados(){
 			$sessao = isset($_SESSION['nome']) ? $_SESSION['nome'] : null;
