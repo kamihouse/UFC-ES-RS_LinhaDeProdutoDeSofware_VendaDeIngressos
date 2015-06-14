@@ -1,6 +1,5 @@
 <?php
     require_once "../../sistema/SetupComponente.php";
-    require_once "../../sistema/setup.php";
 
     $sc = new SetupComponente();
 
@@ -26,7 +25,6 @@
             if(isset($GLOBALS['menu']))
 				$GLOBALS['menu']['sugestao']	= 'Sugestão de Eventos|Componentes/EventsSugestions/EventsSugestions.php?acao=exibe';
         }
-
 
 		public function exibeSugestoes(){
 			$sessao = isset($_SESSION['nome']) ? $_SESSION['nome'] : null;
@@ -86,7 +84,7 @@
                 </div>
             </div>
             <?php
-                } else {
+            } else {
             ?>
             <div class="container">
                 <div class="logo">
@@ -114,6 +112,7 @@
                     </div>
                 </div>
             </div>
+
             <?php
 			}
             $sc->pprint('loadjs');

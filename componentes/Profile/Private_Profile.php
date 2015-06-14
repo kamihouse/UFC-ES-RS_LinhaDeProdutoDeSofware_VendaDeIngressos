@@ -1,6 +1,5 @@
 <?php
     require_once "../../sistema/SetupComponente.php";
-    require_once "../../sistema/setup.php";
 
     $sc = new SetupComponente();
 
@@ -16,12 +15,6 @@
         function init(){
 
         }
-
-		function __construct(){
-			# code...
-            //var_dump(get_defined_vars());
-		}
-
 
         public function exibePerfilPrivado(){
             global $sc;

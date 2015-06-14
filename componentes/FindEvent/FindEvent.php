@@ -1,6 +1,5 @@
 <?php
     require_once '../../sistema/SetupComponente.php';
-    require_once "../../sistema/setup.php";
 
     $sc = new SetupComponente();
 
@@ -52,7 +51,7 @@
 							<div class="form-group">
 								<?php
 								if(!$sessao){
-									echo '<p><a href="../../Componentes/Profile/Profile.php?acao=login">Clique aqui para fazer login</a> e melhorar sua busca.</p>';
+									echo '<p><a href="'.$sc->base_url.'Componentes/Profile/Profile.php?acao=login">Clique aqui para fazer login</a> e melhorar sua busca.</p>';
 								}
 								?>
 							</div>

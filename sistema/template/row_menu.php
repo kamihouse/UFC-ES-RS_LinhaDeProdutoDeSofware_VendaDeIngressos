@@ -1,5 +1,5 @@
 <?php
-    $sc = new SetupComponente();
+    global $sc;
 ?>
 <div class="row">
     <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
@@ -26,8 +26,8 @@
                         <li><a href="<?= $sc->base_url ?>">Home</a></li>
                         <li class="divider"></li>
                         <?php
-                        if (isset($GLOBALS['menu'])) {
-                            foreach ($GLOBALS['menu'] as $item) {
+                        if (isset($sc->menu)) {
+                            foreach ($sc->menu as $item) {
                                 $menulink = explode('|', $item);
                                 echo '<li><a href="' . $sc->base_url . $menulink[1] . '">' . $menulink[0] . '</a></li>';
                             }

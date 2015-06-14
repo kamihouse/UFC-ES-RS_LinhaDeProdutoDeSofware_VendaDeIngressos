@@ -1,6 +1,5 @@
 <?php
     require_once '../../sistema/SetupComponente.php';
-    require_once "../../sistema/setup.php";
 
     $sc = new SetupComponente();
 
@@ -27,11 +26,6 @@
             if(isset($GLOBALS['menu']))
 				$GLOBALS['menu']['promocoes'] 	= 'Promoções|Componentes/FreeTicketsSortition/FreeTicketsSortition.php?acao=exibe';
         }
-
-
-		function __construct(){
-			# code...
-		}
 
 		public function exibePromocao(){
             global $sc;

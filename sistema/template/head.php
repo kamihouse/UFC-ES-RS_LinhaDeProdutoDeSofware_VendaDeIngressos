@@ -1,5 +1,5 @@
 <?php
-    $sc = new SetupComponente();
+    global $sc;
 ?>
 <!DOCTYPE html>
 <html>

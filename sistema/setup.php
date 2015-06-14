@@ -17,7 +17,7 @@
     $path_componentes = 'componentes';
     // muda para o diretorio $path_componentes
 	chdir($sc->root_dir . $path_componentes);
-    
+
     // menu para interface
     $menu = array();
 
@@ -32,11 +32,12 @@
 		}
 		chdir('..');
 	}
-    
+
     unset($d);
-    //unset($arquivos);
+    unset($arquivos);
     unset($a);
     unset($classe);
+    unset($sc);
     
     /*
 	echo '<pre>';

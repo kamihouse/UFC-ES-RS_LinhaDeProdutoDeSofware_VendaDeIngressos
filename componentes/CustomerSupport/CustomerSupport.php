@@ -1,6 +1,5 @@
 <?php
     require_once "../../sistema/SetupComponente.php";
-    require_once "../../sistema/setup.php";
 
     $sc = new SetupComponente();
 
@@ -44,11 +43,6 @@
             if(isset($GLOBALS['menu']))
 				$GLOBALS['menu']['suporte']	= 'Suporte|Componentes/CustomerSupport/CustomerSupport.php?acao=suporte';
         }
-        
-		function __construct(){
-			# code...
-		}
-
 
 		public function exibeTelaSuporte(){
             global $sc;

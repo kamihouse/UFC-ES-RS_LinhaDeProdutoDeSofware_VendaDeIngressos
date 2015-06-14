@@ -1,6 +1,5 @@
 <?php
     require_once '../../sistema/SetupComponente.php';
-    require_once "../../sistema/setup.php";
 
     $sc = new SetupComponente();
 

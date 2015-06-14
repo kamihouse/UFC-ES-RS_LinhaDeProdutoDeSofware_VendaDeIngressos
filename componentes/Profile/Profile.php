@@ -1,6 +1,5 @@
 <?php
 require_once "../../sistema/SetupComponente.php";
-require_once "../../sistema/setup.php";
 
 $sc = new SetupComponente();
 
@@ -44,8 +43,7 @@ switch ($acao) {
 }
 
 
-class Profile
-{
+class Profile{
 
     protected $mensagem = null;
     protected $customizar = array('publico', 'privado');

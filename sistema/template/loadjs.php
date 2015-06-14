@@ -1,5 +1,5 @@
 <?php
-    $sc = new SetupComponente();
+    global $sc;
 ?>
     <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
     <script src="<?= $sc->base_url ?>assets/js/vendor/jquery.min.js"></script>
