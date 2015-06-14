@@ -31,6 +31,10 @@ class SetupComponente {
                 break;
             case 'loadjs':
                 $response = $this->get_include_contents($path_template . 'loadjs.php');
+                break;
+            case 'row_menu':
+                $response = $this->get_include_contents($path_template . 'row_menu.php');
+                break;
         }
 
         echo $response;

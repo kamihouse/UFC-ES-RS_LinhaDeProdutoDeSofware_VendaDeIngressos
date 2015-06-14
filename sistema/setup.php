@@ -1,4 +1,6 @@
 <?php
+    require_once 'SetupComponente.php';
+
 	// Habilita Sessão
 	session_start();
 
@@ -9,10 +11,11 @@
 	function ls(){
 		return preg_grep('/^([^.])/', scandir(getcwd()));
 	}
-    
+    $sc = new SetupComponente();
+
     $path_componentes = 'componentes';
     // muda para o diretorio $path_componentes
-	chdir($path_componentes);
+	chdir($sc->root_dir . $path_componentes);
     
     // menu para interface
     $menu = array();
