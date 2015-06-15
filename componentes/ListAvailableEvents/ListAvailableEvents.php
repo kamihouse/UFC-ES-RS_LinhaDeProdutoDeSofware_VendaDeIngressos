@@ -33,7 +33,7 @@
 
 	class ListAvailableEvents{
 		protected $mensagem = null;
-		protected $customizar = array('addToFavorites', 'featuredEvents', 'makeAnOrder', 'showNumberOfTicket'); // Alterar aqui para os módulos que o cliente escolher
+		protected $customizar = array('AddToFavorites', 'FeaturedEvents', 'MakeAnOrder', 'ShowNumberOfTicket'); // Alterar aqui para os módulos que o cliente escolher
 
         function init(){
             if(isset($GLOBALS['menu']))
@@ -42,11 +42,11 @@
 
 		public function exibeTelaListar(){
 			$sessao = isset($_SESSION['nome']) ? $_SESSION['nome'] : null;
-			$favorito = in_array("addToFavorites", $this->customizar) ? '<a class="btn btn-info btn-large btn-block" href="ListAvailableEvents.php?acao=favoritos">Adicionar aos Favoritos</a>' : null;
-            $relacionado = in_array("featuredEvents", $this->customizar) ? '<a class="btn btn-inverse btn-large btn-block" href="ListAvailableEvents.php?acao=relacionados">Eventos Relacionados</a>' : null;
-            $comprar = in_array("makeAnOrder", $this->customizar) ? '<a class="btn btn-primary btn-large btn-block" href="ListAvailableEvents.php?acao=comprar">Comprar</a>' : null;
+			$favorito = in_array("AddToFavorites", $this->customizar) ? '<a class="btn btn-info btn-large btn-block" href="ListAvailableEvents.php?acao=favoritos">Adicionar aos Favoritos</a>' : null;
+            $relacionado = in_array("FeaturedEvents", $this->customizar) ? '<a class="btn btn-inverse btn-large btn-block" href="ListAvailableEvents.php?acao=relacionados">Eventos Relacionados</a>' : null;
+            $comprar = in_array("MakeAnOrder", $this->customizar) ? '<a class="btn btn-primary btn-large btn-block" href="ListAvailableEvents.php?acao=comprar">Comprar</a>' : null;
 
-            if(in_array("showNumberOfTicket", $this->customizar)){
+            if(in_array("ShowNumberOfTicket", $this->customizar)){
                 $aux = new ShowNumberOfTickets();
             }
 

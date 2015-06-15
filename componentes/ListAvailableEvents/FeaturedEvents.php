@@ -39,7 +39,7 @@
 						<small>Utilize o botão abaixo para voltar para os Eventos disponíveis.</small></p>
 
 						<div class="row col-xs-3">
-							<a href="<?= base_url() ?>Componentes/ListAvailableEvents/ListAvailableEvents.php?acao=listar" class="btn btn-block btn-lg btn-inverse">Voltar para Eventos</a>
+							<a href="<?= base_url() ?>componentes/ListAvailableEvents/ListAvailableEvents.php?acao=listar" class="btn btn-block btn-lg btn-inverse">Voltar para Eventos</a>
 						</div>
 
 					</div>

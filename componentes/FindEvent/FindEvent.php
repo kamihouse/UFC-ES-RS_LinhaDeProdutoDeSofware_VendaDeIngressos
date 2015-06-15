@@ -61,11 +61,11 @@
 									<input type="text" name="login" value="" placeholder="Nome do Evento" class="form-control">
 								</div>
 								<div class="form-group">
-									<input type="password" name="senha" value="" placeholder="Local do Evento" class="form-control">
+									<input type="text" name="senha" value="" placeholder="Local do Evento" class="form-control">
 								</div>
 
 								<div class="form-group">
-									<input type="submit" class="btn btn-block btn-lg btn-primary" value="Encontrar Evento"/>
+									<input type="submit" class="btn btn-block btn-lg btn-primary" value="Buscar Evento"/>
 								</div>
 							</div>
 							<div class="col-xs-5">
@@ -73,11 +73,17 @@
 									<input type="text" name="login" value="" placeholder="Buscar por Hashtag" class="form-control">
 								</div>
 								<div class="form-group">
-									<input type="password" name="senha" value="" placeholder="Buscar por Código Promocional" class="form-control">
+									<input type="text" name="senha" value="" placeholder="Buscar por Código Promocional" class="form-control">
 								</div>
+                                <div class="form-group">
+                                    <input type="date" name="login" value="" placeholder="Buscar por Data" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="senha" value="" placeholder="Buscar por Tipo de Evento" class="form-control">
+                                </div>
 
 								<div class="form-group">
-									<input type="submit" class="btn btn-block btn-lg btn-default" value="Encontrar Avançada de Eventos"/>
+									<input type="submit" class="btn btn-block btn-lg btn-default" value="Busca Avançada de Evento"/>
 								</div>
 							</div>
 						</form>
