@@ -36,13 +36,15 @@
 							<img src="<?= base_url() ?>assets/img/icons/svg/paper-bag.svg" alt="Pocket">
 						</div>
 
-						<div class="col-xs-10">
-							<p><span class="fui-info-circle"></span> Evento comprado com sucesso!
-							<small>(Utilize o botão abaixo para voltar para os Eventos)</small></p>
-						</div>
-
-						<div class="col-xs-3">
-							<a href="<?= base_url() ?>componentes/ListAvailableEvents/ListAvailableEvents.php?acao=listar" class="btn btn-block btn-lg btn-inverse">Voltar para Eventos</a>
+						<div class="col-xs-6">
+							<p>
+                                <span class="fui-info-circle"></span> Evento comprado com sucesso!
+							    <small>(Utilize o botão abaixo para voltar para os Eventos)</small>
+                            </p>
+                            <div class="row col-xs-7">
+                                <a href="<?= base_url() ?>componentes/ListAvailableEvents/ListAvailableEvents.php?acao=listar" class="btn btn-block btn-lg btn-inverse">Voltar para Eventos</a>
+                                <a href="<?= base_url() ?>componentes/ReceivingMethods/ReceivingMethods.php?acao=imprimeVoucher" class="btn btn-block btn-lg btn-success">Imprimir Voucher</a>
+                            </div>
 						</div>
 					</div>
 				</div>
