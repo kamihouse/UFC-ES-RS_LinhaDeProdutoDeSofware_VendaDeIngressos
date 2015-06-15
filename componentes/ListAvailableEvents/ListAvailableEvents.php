@@ -18,17 +18,14 @@
 			$login->exibeTelaListar();
 			break;
 		case 'favoritos':
-			include_once("AddToFavorites.php");
 			$eventos = new AddToFavorites();
 			$eventos->exibeTelaFavoritos();
 			break;
         case 'relacionados':
-            include_once("FeaturedEvents.php");
             $relacionados = new FeaturedEvents();
             $relacionados->exibeEventosRelacionados();
             break;
         case 'comprar':
-            include_once("MakeAnOrder.php");
             $comprar = new MakeAnOrder();
             $comprar->comprar();
             break;

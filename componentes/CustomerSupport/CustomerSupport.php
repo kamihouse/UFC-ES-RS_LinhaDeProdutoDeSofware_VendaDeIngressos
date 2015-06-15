@@ -18,17 +18,14 @@
 			$suporte->exibeTelaSuporte();
 			break;
 		case 'bot':
-			require_once 'BOT.php';
 			$suporte = new BOT();
 			$suporte->exibeTelaBot();
 			break;
 		case 'email':
-			require_once 'Email_Support.php';
 			$suporte = new Email_Support();
 			$suporte->exibeTelaEmail();
 			break;
 		case 'chat':
-			require_once 'Chat.php';
 			$suporte = new Chat();
 			$suporte->exibeTelaChat();
 			break;

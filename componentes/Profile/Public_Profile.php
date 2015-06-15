@@ -37,7 +37,6 @@
                             <h3><?= $_SESSION['nome'] ?></h3>
                             <p><b>Sexo:</b> <?= $_SESSION['sexo'] ?></p>
                             <p><b>Cidade:</b> <?= $_SESSION['cidade'] ?></p>
-                            <p><b>Telefone:</b> <?= $_SESSION['telefone'] ?></p>
                             <hr>
                             <div class="btn-group">
                                 <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" type="button">Opções disponíveis <span class="caret"></span></button>

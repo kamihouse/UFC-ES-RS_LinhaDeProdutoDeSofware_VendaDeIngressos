@@ -31,12 +31,10 @@
             break;
 
         case 'exibePerfilPublico':
-            include_once 'Public_Profile.php';
             $login = new Public_Profile();
             $login->exibePerfilPublico();
             break;
         case 'exibePerfilPrivado':
-            include_once 'Private_Profile.php';
             $login = new Private_Profile();
             $login->exibePerfilPrivado();
             break;
