@@ -15,7 +15,7 @@
     switch ($acao) {
         case 'login':
             $login = new Profile();
-            $login->exibeTelaLogin();
+            $login->exibeTelaLogin($metodo);
             break;
         case 'usuarioLogado':
             $login = new Profile();
@@ -47,8 +47,7 @@
         protected $customizar = array('publico', 'privado');
 
 
-        function init()
-        {
+        function init(){
             if (isset($GLOBALS['menu'])) {
                 $GLOBALS['menu']['login'] = 'Login|componentes/Profile/Profile.php?acao=login';
                 $GLOBALS['menu']['cadastro'] = 'Cadastre-se|componentes/Profile/Profile.php?acao=cadastro';
@@ -58,8 +57,8 @@
         /**
          * Exibe a tela de login.
          */
-        public function exibeTelaLogin()
-        {
+        public function exibeTelaLogin($metodo){
+
             // Acessando escopo fora da classe
             global $metodo;
 
@@ -103,6 +102,10 @@
                 else {
                     $this->mensagem = '<span class="fui-info-circle"> <small>Verifique seu login e senha.</small></span>';
                 }
+            }
+
+            else if($metodo == 'cadastro'){
+                $this->mensagem = '<span class="fui-check" style="color: #27AE60;"> Cadastro efetuado com sucesso!</span>';
             }
 
             global $sc;
@@ -282,7 +285,7 @@
                             Utilize seus dados pessoais abaixo para efetuar seu cadastro e acessar nosso sistema
                         </p>
 
-                        <form action="./Profile.php?acao=cadastro&metodo=submit" method="post">
+                        <form action="./Profile.php?acao=login&metodo=cadastro" method="post">
                             <div class="col-xs-4">
                                 <div class="form-group">
                                     <?= $this->mensagem ?>
@@ -295,7 +298,7 @@
                                 </div>
                                 <hr>
                                 <div class="form-group">
-                                    <input type="password" name="nome" value="" placeholder="Nome Completo"
+                                    <input type="text" name="nome" value="" placeholder="Nome Completo"
                                            class="form-control">
                                 </div>
 
