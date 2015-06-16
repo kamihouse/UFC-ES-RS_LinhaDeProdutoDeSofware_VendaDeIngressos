@@ -46,6 +46,10 @@
             $relacionado = in_array("FeaturedEvents", $this->customizar) ? '<a class="btn btn-inverse btn-large btn-block" href="ListAvailableEvents.php?acao=relacionados">Eventos Relacionados</a>' : null;
             $comprar = in_array("MakeAnOrder", $this->customizar) ? '<a class="btn btn-primary btn-large btn-block" href="ListAvailableEvents.php?acao=comprar">Comprar</a>' : null;
 
+            $aux = new PurchasingManagement();
+            $listaEspera = in_array('WaitList', $aux->customizar) ? '<a class="btn btn-warning btn-large btn-block" href="'. base_url() .'componentes/PurchasingManagement/PurchasingManagement.php?acao=listaEspera">Lista de Espera</a>' : null;
+            unset($aux);
+
             if(in_array("ShowNumberOfTicket", $this->customizar)){
                 $aux = new ShowNumberOfTickets();
             }
@@ -77,6 +81,7 @@
                                 <a class="btn btn-default btn-large btn-block" href="#">Visualizar este evento</a>
                                 <?= $favorito ?>
                                 <?= $relacionado ?>
+                                <?= $listaEspera ?>
                                 <?= $comprar ?>
                             </div>
                         </div>
@@ -90,6 +95,7 @@
                                 <a class="btn btn-default btn-large btn-block" href="#">Visualizar este evento</a>
                                 <?= $favorito ?>
                                 <?= $relacionado ?>
+                                <?= $listaEspera ?>
                                 <?= $comprar ?>
                             </div>
                         </div>
@@ -103,6 +109,7 @@
                                 <a class="btn btn-default btn-large btn-block" href="#">Visualizar este evento</a>
                                 <?= $favorito ?>
                                 <?= $relacionado ?>
+                                <?= $listaEspera ?>
                                 <?= $comprar ?>
                             </div>
                         </div>
