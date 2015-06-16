@@ -53,7 +53,7 @@
 				<div class="col-xs-12">
                     <?php $sc->pprint('row_menu'); ?>
 					<div class="row geral">
-						<h4>Suporte</h4>
+						<h4>Atendimento ao Cliente</h4>
 						<p>
 							Selecione as opção de suporte disponíveis abaixo em nosso sistema que você deseja utilizar
 						</p>

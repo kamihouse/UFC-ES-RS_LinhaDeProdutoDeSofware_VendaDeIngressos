@@ -37,10 +37,6 @@
                         </div>
 
                         <div class="col-xs-6">
-                            <p>
-                                <span class="fui-info-circle"></span> Evento comprado com sucesso!
-                                <small>(Utilize o botão abaixo para voltar para os Eventos)</small>
-                            </p>
                             <div class="row col-xs-7">
                                 <?php
                                     foreach($pm->metodosPagamento as $metodo){
