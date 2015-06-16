@@ -38,7 +38,7 @@
 
         function init(){
             if(isset($GLOBALS['menu']))
-				$GLOBALS['menu']['suporte']	= 'Suporte|componentes/CustomerSupport/CustomerSupport.php?acao=suporte';
+				$GLOBALS['menu']['suporte']	= 'Atendimento ao Cliente|componentes/CustomerSupport/CustomerSupport.php?acao=suporte';
         }
 
 		public function exibeTelaSuporte(){
