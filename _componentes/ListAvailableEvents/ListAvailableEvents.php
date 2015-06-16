@@ -1,4 +1,8 @@
 <?php
+    require_once "../../sistema/SetupComponente.php";
+
+    $sc = new SetupComponente();
+
 	if(!isset($_SESSION)){
 		session_start();
 	}
@@ -14,62 +18,105 @@
 			$login->exibeTelaListar();
 			break;
 		case 'favoritos':
-			include_once("AddToFavorites.php");
 			$eventos = new AddToFavorites();
 			$eventos->exibeTelaFavoritos();
 			break;
-
+        case 'relacionados':
+            $relacionados = new FeaturedEvents();
+            $relacionados->exibeEventosRelacionados();
+            break;
+        case 'comprar':
+            $comprar = new MakeAnOrder();
+            $comprar->comprar();
+            break;
 	}
 
 	class ListAvailableEvents{
 		protected $mensagem = null;
-		protected $customizar = array('addToFavorites', 'featuredEvents', 'makeAnOrder', 'showNumberOfTicket'); // Alterar aqui para os módulos que o cliente escolher
+		protected $customizar = array('AddToFavorites', 'FeaturedEvents', 'MakeAnOrder', 'ShowNumberOfTicket'); // Alterar aqui para os módulos que o cliente escolher
 
         function init(){
             if(isset($GLOBALS['menu']))
-                $GLOBALS['menu'][]			= 'Lista de Eventos';
-				$GLOBALS['menu']['listar']	= 'Eventos Disponíveis|Componentes/ListAvailableEvents/ListAvailableEvents.php?acao=listar';
+				$GLOBALS['menu']['listar']	= 'Eventos Disponíveis|componentes/ListAvailableEvents/ListAvailableEvents.php?acao=listar';
         }
-        
-		function __construct(){
-			# code...
-		}
-
 
 		public function exibeTelaListar(){
 			$sessao = isset($_SESSION['nome']) ? $_SESSION['nome'] : null;
+			$favorito = in_array("AddToFavorites", $this->customizar) ? '<a class="btn btn-info btn-large btn-block" href="ListAvailableEvents.php?acao=favoritos">Adicionar aos Favoritos</a>' : null;
+            $relacionado = in_array("FeaturedEvents", $this->customizar) ? '<a class="btn btn-inverse btn-large btn-block" href="ListAvailableEvents.php?acao=relacionados">Eventos Relacionados</a>' : null;
+            $comprar = in_array("MakeAnOrder", $this->customizar) ? '<a class="btn btn-primary btn-large btn-block" href="ListAvailableEvents.php?acao=comprar">Comprar</a>' : null;
 
-			$favorito = in_array("addToFavorites", $this->customizar) ? '<li><a href="ListAvailableEvents.php?acao=favoritos">Adicionar a Favoritos</a> - AddToFavorites</li>' : null;
-			print('
-                <!DOCTYPE html>
-                <html>
-                    <head>
-                        <meta charset="utf-8">
-                        <title>LPS - Venda de Ingressos - Eventos Disponíveis</title>
-                        </head>
-                    <body>
-                        <h3><a href="../../">LPS - Venda de Ingressos</a> | Eventos Disponíveis</h3>
+            $aux = new PurchasingManagement();
+            $listaEspera = in_array('WaitList', $aux->customizar) ? '<a class="btn btn-warning btn-large btn-block" href="'. base_url() .'componentes/PurchasingManagement/PurchasingManagement.php?acao=listaEspera">Lista de Espera</a>' : null;
+            unset($aux);
+
+            if(in_array("ShowNumberOfTicket", $this->customizar)){
+                $aux = new ShowNumberOfTickets();
+            }
+
+            global $sc;
+            $sc->pprint('head');
+            ?>
+            <div class="container">
+                <div class="logo">
+                    <h1>UFC RS - LPS<span>Venda de Ingressos</span><dt>2.0</dt></h1>
+                </div>
+
+                <div class="col-xs-12">
+                    <?php $sc->pprint('row_menu'); ?>
+                    <div class="row geral">
+                        <h4>Eventos Disponíveis</h4>
+                        <p>
+                            Venda de Ingressos Online - Eventos disponíveis <?= empty($sessao) ? '' : 'para <b>' . $sessao ?></b>
+                        </p>
                         <hr>
 
-                        <p>Eventos sugeridos para você: <b>'. $sessao .'</b></p>
+                        <div class="col-xs-4">
+                            <div class="tile">
+                                <img src="<?= $sc->base_url ?>assets/img/icons/svg/gift-box.svg" class="tile-image big-illustration">
+                                <h3 class="tile-title">14/06/2015</h3>
+                                <p>Uma noite no museu - Fortaleza Reggae Clube</p>
+                                <?= isset($aux) ? '<h5>'.$aux->nTickets().'&nbsp;<small style="color: inherit; font-size: .56em">Ingressos disponíveis</small></h5>' : '' ?>
 
-						<ul>
-							<li>Open Beer Festival - Premium Paulínia | Paulínia-SP
-							<ul>
-								<li>Comprar - MakeAnOrder</li>
-								<li>99 - ShowNumberOfTicket</li>
-								'. $favorito .'
-								<li>Eventos Relacionados - FeaturedEvents</li>
-							</ul>
-							</li>
-							<li>Energia na Véia Junina - Clube Juventus | Irecê-BA</li>
-							<li>Dusk - Deep Love - Club 33 | São Paulo-SP</li>
-							<li>Open Beer Festival - Paulínia | Paulínia-SP</li>
-							<li>Véia Junina - Clube Juventus | Irecê-CE</li>
-							<li>Deep Love - Club 33 | São Paulo-SP</li>
-						</ul>
-                    </body>
-                </html>
-            ');
+                                <a class="btn btn-default btn-large btn-block" href="#">Visualizar este evento</a>
+                                <?= $favorito ?>
+                                <?= $relacionado ?>
+                                <?= $listaEspera ?>
+                                <?= $comprar ?>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="tile">
+                                <img src="<?= $sc->base_url ?>assets/img/icons/svg/toilet-paper.svg" class="tile-image big-illustration">
+                                <h3 class="tile-title">17/06/2015</h3>
+                                <p>Dusk - The Deep Love - Social Club 33</p>
+                                <?= isset($aux) ? '<h5>'.$aux->nTickets().'&nbsp;<small style="color: inherit; font-size: .56em">Ingressos disponíveis</small></h5>' : '' ?>
+
+                                <a class="btn btn-default btn-large btn-block" href="#">Visualizar este evento</a>
+                                <?= $favorito ?>
+                                <?= $relacionado ?>
+                                <?= $listaEspera ?>
+                                <?= $comprar ?>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="tile">
+                                <img src="<?= $sc->base_url ?>assets/img/icons/svg/calendar.svg" class="tile-image big-illustration">
+                                <h3 class="tile-title">24/06/2015</h3>
+                                <p>100% convertable to HTML/CSS layout.</p>
+                                <?= isset($aux) ? '<h5>'.$aux->nTickets().'&nbsp;<small style="color: inherit; font-size: .56em">Ingressos disponíveis</small></h5>' : '' ?>
+
+                                <a class="btn btn-default btn-large btn-block" href="#">Visualizar este evento</a>
+                                <?= $favorito ?>
+                                <?= $relacionado ?>
+                                <?= $listaEspera ?>
+                                <?= $comprar ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+            $sc->pprint('loadjs');
 		}
 	}

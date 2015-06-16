@@ -1,10 +1,10 @@
 <?php
 	class ShowNumberOfTickets{
         function init(){
-            
+
         }
-        
-		function __construct(){
-			# code...
-		}
+
+        public function nTickets(){
+            return rand(10, 1999);
+        }
 	}
