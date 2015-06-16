@@ -32,8 +32,9 @@
 	}
 
 	class ListAvailableEvents{
-		protected $mensagem = null;
-		protected $customizar = array('AddToFavorites', 'FeaturedEvents', 'MakeAnOrder', 'ShowNumberOfTicket'); // Alterar aqui para os módulos que o cliente escolher
+		public $mensagem = null;
+		//public $customizar = array('AddToFavorites', 'FeaturedEvents', 'MakeAnOrder', 'ShowNumberOfTicket'); // Alterar aqui para os módulos que o cliente escolher
+        public $customizar = array('MakeAnOrder');
 
         function init(){
             if(isset($GLOBALS['menu']))

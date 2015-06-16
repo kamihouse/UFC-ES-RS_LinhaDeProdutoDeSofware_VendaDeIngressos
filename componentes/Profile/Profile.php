@@ -43,8 +43,9 @@
 
     class Profile{
 
-        protected $mensagem = null;
-        protected $customizar = array('publico', 'privado');
+        public $mensagem = null;
+        //public $customizar = array('publico', 'privado');
+        public $customizar = array('privado');
 
 
         function init(){

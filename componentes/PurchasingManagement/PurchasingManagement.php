@@ -25,8 +25,9 @@
 
 	class PurchasingManagement{
         public $mensagem = null;
-        public $customizar = array('Area', 'CategoryOfTickets', 'OrderCancellation', 'Payments', 'Seat', 'WaitList'); // Alterar aqui para os módulos que o cliente escolher
-        public $metodosPagamento = array('Boleto Bancario', 'Cartão de Crédito', 'PagSeguro', 'Paypal');
+        //public $customizar = array('Area', 'CategoryOfTickets', 'OrderCancellation', 'Payments', 'Seat', 'WaitList'); // Alterar aqui para os módulos que o cliente escolher
+        public $customizar = array('Payments');
+        public $metodosPagamento = array('Boleto Bancario');
 
         function init(){
             
