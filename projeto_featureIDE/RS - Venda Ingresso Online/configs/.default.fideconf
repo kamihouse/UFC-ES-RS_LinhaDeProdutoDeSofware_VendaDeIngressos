@@ -1,0 +1,36 @@
+# Lists all features from the model with manual (first digit) and automatic (second digit) selection
+# 0 = deselected, 1 = selected, 2 = undefined
+21RSVendaIngressoOnline
+22EventsSugestions
+11ListAvailableEvents
+22FeaturedEvents
+22ShowNumberOfTickets
+22AddToFavorites
+11FindEvent
+11Profile
+22Public_Profile
+12Private_Profile
+11PurchasingManagement
+11MakeAnOrder
+11Payments
+12BankSlip
+22CreditCard
+22Paypal
+22PagSeguro
+22OrderCancellation
+22WaitList
+22CategoriesOfTickets
+22Area
+22Seat
+22FreeTicketsSortition
+22Notifications
+22Email_Notification
+22SMS
+11ReceivingMethods
+11Voucher
+22Mail
+22WithdrawInDay
+22CustomerSupport
+22Emaill_Support
+22Chat
+22BOT

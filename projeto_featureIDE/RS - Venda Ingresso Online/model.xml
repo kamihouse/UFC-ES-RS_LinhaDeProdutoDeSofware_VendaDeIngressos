@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="0">
+		<struct>
+			<and abstract="true" coordinates="466, 40" mandatory="true" name="RSVendaIngressoOnline">
+				<feature coordinates="33, 137" name="EventsSugestions"/>
+				<and coordinates="150, 191" mandatory="true" name="ListAvailableEvents">
+					<feature coordinates="57, 245" name="FeaturedEvents"/>
+					<feature coordinates="125, 278" name="ShowNumberOfTickets"/>
+					<feature coordinates="246, 243" name="AddToFavorites"/>
+				</and>
+				<feature coordinates="214, 136" mandatory="true" name="FindEvent"/>
+				<or coordinates="413, 154" mandatory="true" name="Profile">
+					<feature coordinates="341, 196" mandatory="true" name="Public_Profile"/>
+					<feature coordinates="435, 196" mandatory="true" name="Private_Profile"/>
+				</or>
+				<and coordinates="470, 227" mandatory="true" name="PurchasingManagement">
+					<feature coordinates="298, 290" mandatory="true" name="MakeAnOrder"/>
+					<or coordinates="383, 290" mandatory="true" name="Payments">
+						<feature coordinates="309, 357" mandatory="true" name="BankSlip"/>
+						<feature coordinates="368, 357" mandatory="true" name="CreditCard"/>
+						<feature coordinates="438, 357" mandatory="true" name="Paypal"/>
+						<feature coordinates="488, 357" mandatory="true" name="PagSeguro"/>
+					</or>
+					<feature coordinates="448, 290" name="OrderCancellation"/>
+					<feature coordinates="553, 290" name="WaitList"/>
+					<or coordinates="608, 290" name="CategoriesOfTickets">
+						<feature coordinates="601, 357" mandatory="true" name="Area"/>
+						<feature coordinates="641, 357" mandatory="true" name="Seat"/>
+					</or>
+				</and>
+				<feature coordinates="562, 175" name="FreeTicketsSortition"/>
+				<alt coordinates="781, 228" name="Notifications">
+					<feature coordinates="743, 280" mandatory="true" name="Email_Notification"/>
+					<feature coordinates="842, 280" mandatory="true" name="SMS"/>
+				</alt>
+				<and coordinates="913, 109" mandatory="true" name="ReceivingMethods">
+					<feature coordinates="886, 159" mandatory="true" name="Voucher"/>
+					<feature abstract="true" coordinates="944, 159" name="Mail"/>
+					<feature abstract="true" coordinates="980, 159" name="WithdrawInDay"/>
+				</and>
+				<or coordinates="944, 229" name="CustomerSupport">
+					<feature coordinates="897, 280" mandatory="true" name="Emaill_Support"/>
+					<feature coordinates="984, 280" mandatory="true" name="Chat"/>
+					<feature coordinates="1024, 280" mandatory="true" name="BOT"/>
+				</or>
+			</and>
+		</struct>
+		<constraints>
+			<rule coordinates="521, 407">
+				<imp>
+					<var>Emaill_Support</var>
+					<var>Email_Notification</var>
+				</imp>
+			</rule>
+			<rule coordinates="521, 434">
+				<imp>
+					<var>EventsSugestions</var>
+					<conj>
+						<var>Profile</var>
+						<var>Private_Profile</var>
+					</conj>
+				</imp>
+			</rule>
+			<rule coordinates="521, 459">
+				<imp>
+					<conj>
+						<var>Public_Profile</var>
+						<not>
+							<var>Private_Profile</var>
+						</not>
+					</conj>
+					<conj>
+						<not>
+							<var>CreditCard</var>
+						</not>
+						<conj>
+							<not>
+								<var>Paypal</var>
+							</not>
+							<not>
+								<var>PagSeguro</var>
+							</not>
+						</conj>
+					</conj>
+				</imp>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
