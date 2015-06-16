@@ -2,7 +2,6 @@
     require_once "../../sistema/SetupComponente.php";
 
     $sc = new SetupComponente();
-    $metodo = isset($_GET['metodo']) ? $_GET['metodo'] : null;
 
 	if(!isset($_SESSION)){
 		session_start();
@@ -37,11 +36,18 @@
                             <img src="<?= base_url() ?>assets/img/icons/svg/paper-bag.svg" alt="Pocket">
                         </div>
 
-                        <div class="col-xs-6">
+                        <div class="row col-xs-7">
+                            <?php
+                                if(in_array('CategoryOfTickets', $pm->customizar)){
+                                    $aux = new CategoryOfTickets();
+                                    ?>
+                                        <h6 class="demo-panel-title">Selecione o tipo de seu ingresso: </h6>
+                                    <?php
+                                    $aux->imprimeCategorias();
+                                }
+                            ?>
                             <div class="row col-xs-7">
-                                <?php
-                                    echo($metodo == "Boleto Bancario") ? '&metoco=bb' : '';
-                                ?>
+                                <h6 class="demo-panel-title">Selecione o tipo de pagamento: </h6>
                                 <?php
                                     foreach($pm->metodosPagamento as $metodo){
                                         echo '<a href="'. base_url() .'componentes/PurchasingManagement/PurchasingManagement.php?acao=compraRealizada'. ($metodo == "Boleto Bancario" ? '&metodo=bb' : '') .'" class="btn btn-block btn-lg btn-inverse">'. $metodo .'</a>';
