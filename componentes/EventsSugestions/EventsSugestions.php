@@ -112,7 +112,6 @@
                     </div>
                 </div>
             </div>
-
             <?php
 			}
             $sc->pprint('loadjs');
